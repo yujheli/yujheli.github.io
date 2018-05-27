@@ -345,7 +345,7 @@ section.section {
 	z-index: -1;
 	display: block;
 
-	background-image: url(../img/parallax/cover_bg_2.jpg);
+	background-image: url(../img/parallax/cover_ntu.jpg);
     -webkit-filter: blur(15px);
     -moz-filter: blur(15px);
     -o-filter: blur(15px);
@@ -353,8 +353,13 @@ section.section {
     filter: blur(15px);
 }*/
 #parallax0{	
-	background-image: url(../img/parallax/cover_bg_2.jpg);
+	background-image: url(../img/parallax/cover_ntu.jpg);
 	background-size: cover;
+	/*-webkit-filter: blur(15px);*/
+    /*-moz-filter: blur(15px);*/
+    /*-o-filter: blur(15px);*/
+    /*-ms-filter: blur(15px);*/
+    /*filter: blur(15px);*/
 }
 #parallax1{	
 	background-image: url(../img/parallax/img1.jpg);
@@ -488,6 +493,12 @@ section.featured h2.slogan {
 	color: #fff;
 	font-size: 48px;
 	font-weight: 900;
+}
+
+section.featured h3.slogan {
+	color: #fff;
+	font-size: 32px;
+	font-weight: 700;
 }
   
  /* inner heading */
@@ -651,7 +662,9 @@ About
 .member-photo img {
 	-webkit-border-radius:50%;
 		-moz-border-radius:50%;
-			border-radius:50%;	
+			border-radius:50%;
+	/*margin: 0 0 20px 0;	*/
+
 }
 
 .team-detail h4 {
