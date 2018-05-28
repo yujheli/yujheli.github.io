@@ -353,7 +353,9 @@ section.section {
     filter: blur(15px);
 }*/
 #parallax0{	
-	background-image: url(../img/parallax/cover_ntu2.png);
+	/*background-image: url(../img/parallax/cover_ntu2.png);*/
+	background-image: url(../img/parallax/white_3.jpg);
+
 	background-size: cover;
 	/*-webkit-filter: blur(15px);*/
     /*-moz-filter: blur(15px);*/
