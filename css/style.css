@@ -41,7 +41,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 h1 { font-size: 40px; line-height: 30px; }
 h2 { font-size: 32px; }
-h3 { font-size: 24px; }
+h3 { font-size: 24px; line-height: 1.5;}
 h4 { font-size: 18px; }
 h5 { font-size: 16px; }
 .txt-light { font-weight: 300; }
@@ -354,6 +354,7 @@ section.section {
 }*/
 #parallax0{	
 	background-image: url(../img/parallax/white_3.jpg);
+	/*style="object-fit:contain;"*/
 
 	background-size: cover;
 	/*-webkit-filter: blur(15px);*/
@@ -363,10 +364,12 @@ section.section {
     /*filter: blur(15px);*/
 }
 #parallax1{	
-	background-image: url(../img/parallax/img1.jpg);
+	background-image: url(../img/parallax/img2.jpg);
 }
 #parallax2{	
-	background-image: url(../img/parallax/img2.jpg);
+	background-image: url(../img/parallax/white_3.jpg);
+	background-size: cover;
+
 }
 #testimonials{	
 	background-image: url(../img/parallax/img3.jpg);
@@ -1016,10 +1019,13 @@ a.scrollup:hover{
 .social-network a.icoVimeo:hover {
 	background-color:#0590B8;
 }
+.social-network a.icoGithub:hover {
+	background-color:#DCDCDC;
+}
 .social-network a.icoLinkedin:hover {
 	background-color:#007bb7;
 }
-.social-network a.icoRss:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i, 
+.social-network a.icoGithub:hover i, .social-network a.icoRss:hover i, .social-network a.icoFacebook:hover i, .social-network a.icoTwitter:hover i, 
 .social-network a.icoGoogle:hover i, .social-network a.icoVimeo:hover i, .social-network a.icoLinkedin:hover i {
 	color:#fff;
 }
