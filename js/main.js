@@ -100,28 +100,46 @@
 	// 	});
 
 
-		//parallax
-        var isMobile = false;
-
-        if(Modernizr.mq('only all and (max-width: 1024px)') ) {
-            isMobile = true;
+    //scroll menu v2
+    let prevActiveId = null;
+    $(document).scroll(function() {
+        let id;
+        $('.appear').each(function(idx, elem) {
+            if (elem.offsetTop - window.scrollY < $('.navbar').height()) {
+                id = elem.id;
+            }
+        });
+        if (prevActiveId != id) {
+            $('.nav li').removeClass('active');
+            $(".nav a[href='#" + id + "']").parent().addClass("active");
+            prevActiveId = id;
+            // console.log(id);
         }
-
-        
-        if (isMobile == false && ($('#parallax1').length  ||isMobile == false &&  $('#parallax2').length ||isMobile == false &&  $('#testimonials').length))
-        {
+    });
 
 
-            $(window).stellar({
-                responsive:true,
-                scrollProperty: 'scroll',
-                parallaxElements: false,
-                horizontalScrolling: false,
-                horizontalOffset: 0,
-                verticalOffset: 0
-            });
+    //parallax
+    var isMobile = false;
 
-        }
+    if(Modernizr.mq('only all and (max-width: 1024px)') ) {
+        isMobile = true;
+    }
+
+    
+    if (isMobile == false && ($('#parallax1').length  ||isMobile == false &&  $('#parallax2').length ||isMobile == false &&  $('#testimonials').length))
+    {
+
+
+        $(window).stellar({
+            responsive:true,
+            scrollProperty: 'scroll',
+            parallaxElements: false,
+            horizontalScrolling: false,
+            horizontalOffset: 0,
+            verticalOffset: 0
+        });
+
+    }
     
     //Google Map
     var get_latitude = $('#google-map').data('latitude');
