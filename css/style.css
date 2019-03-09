@@ -372,6 +372,18 @@ section.section {
 	
 
 }
+#parallax{	
+	background-image: url(../img/parallax/cover_japan2.jpg);
+	background-size: cover;
+	
+
+}
+#home{	
+	background-image: url(../img/parallax/cover_japan2.jpg);
+	background-size: cover;
+	
+
+}
 #testimonials{	
 	background-image: url(../img/parallax/img3.jpg);
 }
