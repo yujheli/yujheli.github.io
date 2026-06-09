@@ -494,7 +494,13 @@ img { max-width: 100%; display: block; }
   color: var(--fg-muted);
   font-size: 13.5px;
 }
-.footer img { margin: 16px auto 0; }
+.footer img { margin: 16px auto 0; max-width: 100%; }
+.visitor-map {
+  display: flex;
+  justify-content: center;
+  margin-top: 18px;
+}
+.visitor-map > * { max-width: 100%; }
 
 /* ---------- Back-to-top ---------- */
 .back-to-top {
