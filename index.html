@@ -36,6 +36,7 @@
       <a href="#news" data-section="news">News</a>
       <a href="#research" data-section="research">Research</a>
       <a href="#publications" data-section="publications">Publications</a>
+      <a href="#service" data-section="service">Service</a>
       <a href="#education" data-section="education">Education</a>
       <a href="#experiences" data-section="experiences">Experiences</a>
     </nav>
@@ -442,6 +443,32 @@
       </div>
     </section>
 
+    <!-- ===== Professional Service ===== -->
+    <section id="service" class="section">
+      <div class="section-header">
+        <h2>Professional Service</h2>
+        <span class="meta">Reviewing &amp; community</span>
+      </div>
+      <div class="service-block">
+        <h3 class="service-subtitle">Conference Reviewer</h3>
+        <div class="venue-tags">
+          <span class="venue-tag">CVPR</span>
+          <span class="venue-tag">ICCV</span>
+          <span class="venue-tag">ECCV</span>
+          <span class="venue-tag">NeurIPS</span>
+          <span class="venue-tag">ICML</span>
+          <span class="venue-tag">ICLR</span>
+          <span class="venue-tag">WACV</span>
+          <span class="venue-tag">ACCV</span>
+        </div>
+        <h3 class="service-subtitle">Journal Reviewer</h3>
+        <div class="venue-tags">
+          <span class="venue-tag">IEEE TPAMI</span>
+          <span class="venue-tag">IEEE TIP</span>
+        </div>
+      </div>
+    </section>
+
     <!-- ===== Education ===== -->
     <section id="education" class="section">
       <div class="section-header">
@@ -572,7 +599,7 @@
 
     // ---------- Active nav highlighting via IntersectionObserver ----------
     const navLinks = document.querySelectorAll('#primary-nav a');
-    const sections = ['about','news','research','publications','education','experiences']
+    const sections = ['about','news','research','publications','service','education','experiences']
       .map(id => document.getElementById(id))
       .filter(Boolean);
 
