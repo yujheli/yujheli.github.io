@@ -331,9 +331,8 @@ img { max-width: 100%; display: block; }
 
 .pub {
   display: grid;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: 220px 1fr;
   gap: 22px;
-  align-items: start;
   padding: 18px;
   border-radius: var(--radius);
   border: 1px solid var(--border);
@@ -353,24 +352,20 @@ img { max-width: 100%; display: block; }
 @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
 
 .pub-thumb {
-  width: 100%;
-  height: 170px;
   border-radius: var(--radius-sm);
   overflow: hidden;
   background: #ffffff;
-  border: 1px solid var(--border);
+  aspect-ratio: 4 / 3;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
-  box-sizing: border-box;
+  padding: 8px;
 }
 .pub-thumb img {
-  display: block;
   max-width: 100%;
   max-height: 100%;
-  width: auto !important;
-  height: auto !important;
+  width: auto;
+  height: auto;
   object-fit: contain;
   background: #ffffff;
 }
@@ -505,7 +500,7 @@ img { max-width: 100%; display: block; }
   .hero { grid-template-columns: 1fr; text-align: left; }
   .hero .photo { width: 240px; height: 240px; }
   .pub { grid-template-columns: 1fr; }
-  .pub-thumb { height: 220px; }
+  .pub-thumb { aspect-ratio: auto; max-height: 260px; min-height: 160px; }
   .edu { grid-template-columns: 70px 1fr; }
   .edu .logo { width: 70px; height: 70px; }
   .news-list li { grid-template-columns: 1fr; gap: 2px; }
