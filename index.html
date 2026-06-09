@@ -1,859 +1,608 @@
-<!DOCTYPE HTML>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <!-- Hi, Jon Here. Please DELETE the two <script> tags below if you use this HTML, otherwise my analytics will track your page -->
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <!-- <script type="text/javascript" async="" src="https://www.google-analytics.com/analytics.js"></script> -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-7580334-2"></script> -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-7580334-2');
-  </script>
-
-  <title>Yu-Jhe Li</title>
-  
-  <meta name="author" content="Yu-Jhe Li">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- <meta name="viewport" content="width=800px"> -->
-  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <title>Yu-Jhe Li — Software Engineer & Researcher in ML / Computer Vision</title>
+
+  <meta name="author" content="Yu-Jhe Li">
+  <meta name="description" content="Personal website of Yu-Jhe Li (李宇哲) — Software Engineer at Google working on generative AI. Previously Research Scientist at Adobe and Microsoft. Ph.D. from Carnegie Mellon University.">
+  <meta name="keywords" content="Yu-Jhe Li, 李宇哲, Generative AI, Machine Learning, Computer Vision, CMU, Google, Adobe, Microsoft">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Yu-Jhe Li — ML / Computer Vision Researcher">
+  <meta property="og:description" content="Software Engineer at Google (generative AI). Ph.D. from Carnegie Mellon University.">
+  <meta property="og:image" content="fig/yujhe_2024.jpg">
+  <meta property="og:url" content="https://yujheli.github.io/">
+
   <link rel="icon" type="image/png" href="fig/cmu_seal.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
 </head>
 
 <body>
-  <!-- <table width="800" border="0" align="center" cellspacing="0" cellpadding="0"> -->
-  <table style="width:100%;max-width:950px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:63%;vertical-align:middle">
-              <p style="text-align:center">
-                <name>Yu-Jhe Li (李宇哲)</name>
-              </p>
-                <p>
-                I am currently a Software Engineer at Google, working on generative AI–related projects. Previously, I was a Research Scientist at Adobe and Microsoft.
-                <br><br>
-                I received my Ph.D. in Electrical and Computer Engineering from Carnegie Mellon University (CMU), where I was advised by Prof. <a href="http://www.cs.cmu.edu/~kkitani/" target="_blank">Kris Kitani</a>. During my Ph.D., I interned at <a href="https://research.facebook.com/" target="_blank">Meta Research</a> (twice) and <a href="https://research.adobe.com/" target="_blank">Adobe Research</a>.
-                <br><br>
-                I earned my M.Sc. from National Taiwan University (國立台灣大學), advised by Prof. <a href="http://vllab.ee.ntu.edu.tw/members.html" target="_blank">Yu-Chiang Frank Wang</a> at the Vision and Learning Lab (VLL), and my B.S. from National Tsing Hua University (國立清華大學).
-                </p>
+  <!-- Scroll progress bar -->
+  <div class="progress" id="progress"></div>
 
-              <p style="text-align:center">
-                <!-- yujheli [AT] microsoft.com<br> -->
-                <!-- yujhe.jack [AT] gmail.com<br> -->
-                <a href="mailto:yujhe.jack@gmail.com" target="_blank">Email</a> &nbsp/&nbsp
-                <a href="https://www.linkedin.com/in/yu-jhe-li-a8a272127/" target="_blank">LinkedIn</a> &nbsp/&nbsp
-                <!-- <a href="data/JonBarron-bio.txt">Biography</a> &nbsp/&nbsp -->
-                <a href="https://scholar.google.com/citations?hl=en&user=MpLiwTIAAAAJ" target="_blank">Google Scholar</a> 
-                <!-- &nbsp/&nbsp -->
-                <!-- <a href="https://github.com/yujheli" target="_blank">Github</a> &nbsp/&nbsp
-                <a href="https://twitter.com/yujheli" target="_blank">Twitter</a> -->
-              </p>
-              <!-- <p style="text-align:center;color:red;">
-                We're looking for research interns to work on 3D object control for image generation (diffusion) with LLM/VLM/MLLM models!<br> Contact me if you are interested.
-              </p> -->
-            </td>
-            
-            <td style="padding:2.5%;width:40%;max-width:40%">
-              <img style="width:100%;max-width:100%" alt="profile photo" src="fig/yujhe_2024.jpg" class="hoverZoomLink"></a>
-            </td>
-            
-          </tr>
-        </tbody></table>
+  <!-- Frozen top navigation -->
+  <header class="topnav" role="banner">
+    <a href="#top" class="brand">Yu-Jhe <span class="accent">Li</span></a>
 
-        
-        <!-- <p style="text-align:center;color:red;">
-          I'm looking for full-time research scientist/engineer positions! <br> Feel free to contact me if you think I'm a good fit.<br><br>
-        </p> -->
-        <!-- <table width="100%" align="center" style="margin-left:10px" cellspacing="0" cellpadding="0" border="0">
-          <tbody><tr>
-            <th width="25%" valign="top" align="center">
-              <img src="fig/ri.jpg" alt="sym" width="120" height="120" class="img-responsive">
-              <p style="line-height:1.3; font-size:10pt">The Robotics Institute, CMU<br>Research Associate<br>Sep. 19 - Present</p>
-            </th>
-            <th width="25%" valign="top" align="center"> 
-              <img src="fig/ntu.png" alt="sym" width="120" height="120" class="img-responsive">
-              <p style="line-height:1.3; font-size:10pt">National Taiwan University<br>M.Sc. in Comm. Eng.<br>Sep 17 - Jan. 19</p>
-            </th>
-            <th width="25%" valign="top" align="center">
-              <img src="fig/umn.png" alt="sym" width="120" height="120"  class="img-responsive">
-              <p style="line-height:1.3; font-size:10pt">University of Minnesota-TC<br>Exchange Student<br>Aug. 16 - Jan. 17</p>
-            </th>
-            <th width="25%" valign="top" align="center">
-              <img src="fig/nthu.png" alt="sym" width="120" height="120" class="img-responsive">
-              <p style="line-height:1.3; font-size:10pt">National Tsing Hua University<br>B.Sc. in EECS<br>Sep. 13 - Jan. 17</p>
-            </th>
-          </tr>
-        </tbody></table> -->
+    <nav id="primary-nav" aria-label="Primary navigation">
+      <a href="#about" data-section="about">About</a>
+      <a href="#news" data-section="news">News</a>
+      <a href="#research" data-section="research">Research</a>
+      <a href="#publications" data-section="publications">Publications</a>
+      <a href="#education" data-section="education">Education</a>
+      <a href="#experiences" data-section="experiences">Experiences</a>
+    </nav>
 
-        <!-- <table width="100%" align="center" style="margin-left:10px" cellspacing="0" cellpadding="0" border="0">
-          <tbody>
-            
-            <tr>
-            <th width="25%" valign="top" align="center">
-              <img src="fig/cmu.png" alt="sym" height="150"  class="img-responsive">
-              <p style="line-height:1.3; font-size:11pt">Carnegie Mellon University<br>Ph.D in ECE<br>Aug. 20 - Present</p>
-            </th>
-            <th width="25%" valign="top" align="center">
-              <img src="fig/ri.jpg"   height="150" class="img-responsive">
-              <p style="line-height:1.3; font-size:11pt">The Robotics Institute<br>Research Associate<br>Sep. 19 - Aug. 20</p>
-            </th>
-            <th width="25%" valign="top" align="center"> 
-              <img src="fig/ntu.png" alt="sym" height="150" class="img-responsive">
-              <p style="line-height:1.3; font-size:11pt">National Taiwan University<br>M.Sc. in Comm. Eng.<br>Sep 17 - Jan. 19</p>
-            </th>
-            <th width="25%" valign="top" align="center">
-              <img src="fig/nthu.png" alt="sym"  height="150" class="img-responsive">
-              <p style="line-height:1.3; font-size:11pt">National Tsing Hua University<br>B.Sc. in EECS<br>Sep. 13 - Jan. 17</p>
-            </th>
-          </tr>
-        </tbody></table> -->
-<!-- 
-        <table width="100%" align="center" style="margin-left:10px" cellspacing="0" cellpadding="0" border="0">
-          <tbody>
-            
-            <tr>
-            <th width="20%" valign="top" align="center">
-              <img src="fig/adobe.png" alt="sym" height="150"  class="img-responsive">
-              <p style="line-height:1.3; font-size:14pt">Adobe</p>
-            </th>
-            <th width="20%" valign="top" align="center">
-              <img src="fig/microsoft.png" alt="sym" height="150"  class="img-responsive">
-              <p style="line-height:1.3; font-size:14pt">Microsoft</p>
-            </th>
-            <th width="20%" valign="top" align="center">
-              <img src="fig/cmu.png" alt="sym" height="150"  class="img-responsive">
-              <p style="line-height:1.3; font-size:14pt">Carnegie Mellon University</p>
-            </th>
-            <th width="20%" valign="top" align="center">
-              <img src="fig/meta3.png" alt="sym" height="150"  class="img-responsive">
-              <p style="line-height:1.3; font-size:14pt">Meta</p>
-            </th>
-            <th width="20%" valign="top" align="center">
-              <img src="fig/fb.jpeg" alt="sym" height="150"  class="img-responsive">
-              <p style="line-height:1.3; font-size:14pt">Facebook</p>
-            </th>
-          </tr>
-        </tbody></table> -->
+    <div style="display:flex;align-items:center;gap:6px;">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg id="iconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+        <svg id="iconMoon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+      </button>
+    </div>
+  </header>
 
-        <table width="100%" align="center" style="margin-left:10px" cellspacing="0" cellpadding="0" border="0">
-          <tbody>
-            
-            <tr>
-             <!-- <heading>Research Experience</heading> -->
-            <!-- <th width="25%" valign="top" align="center">
-              <img src="fig/fb.jpeg" alt="sym" height="150"  class="img-responsive">
-              <p style="line-height:1.3; font-size:12pt">Facebook Research<br>Research Intern<br>Aug. 20 - Present</p>
-            </th>
-            <th width="25%" valign="top" align="center">
-              <img src="fig/ri.jpg"   height="150" class="img-responsive">
-              <p style="line-height:1.3; font-size:12pt">The Robotics Institute, CMU<br>Research Associate<br>Sep. 19 - Aug. 20</p>
-            </th> -->
-            <!-- <th width="25%" valign="top" align="center"> 
-              <img src="fig/ntu.png" alt="sym" height="150" class="img-responsive">
-              <p style="line-height:1.3; font-size:12pt">National Taiwan University<br>M.Sc. in Comm. Eng.<br>Sep 17 - Jan. 19</p>
-            </th>
-            <th width="25%" valign="top" align="center">
-              <img src="fig/nthu.png" alt="sym"  height="150" class="img-responsive">
-              <p style="line-height:1.3; font-size:12pt">National Tsing Hua University<br>B.Sc. in EECS<br>Sep. 13 - Jan. 17</p>
-            </th> -->
-          </tr>
-        </tbody></table>
+  <main class="page" id="top">
 
-        <!-- <table width="100%" align="center" style="margin-left:10px" cellspacing="0" cellpadding="0" border="0">
-          <tbody><tr>
-            <th width="25%" valign="top" align="center">
-              <img src="images/uberatg.png" alt="sym" width="40%">
-              <p style="line-height:1.3; font-size:12pt">Uber ATG<br>Research Intern<br>Jun 19 - Present</p>
-            </th>
-            <th width="25%" valign="top" align="center">
-              <img src="images/nthu.png" alt="sym" width="40%">
-              <p style="line-height:1.3; font-size:10pt">National Taiwan University<br>M.Sc. in Communication Engineering<br>Sep 17 - Jan. 19</p>
-            </th>
-            <th width="25%" valign="top" align="center">
-              <img src="images/sinica.png" alt="sym" width="50%">
-              <p style="line-height:1.3; font-size:10pt">IIS, Academia Sinica<br>Research Intern<br>Jun. 17 - Aug. 17</p>
-            </th>
-            <th width="25%" valign="top" align="center">
-              <img src="fig/nthu.png" alt="sym" width="50%">
-              <p style="line-height:1.3; font-size:10pt">National Tsing Hua University<br>B.Sc. in Electrical Engineering and Computer Science<br>Sep. 13 - Jan. 17</p>
-            </th>
-          </tr>
-        </tbody></table> -->
+    <!-- ===== About / Hero ===== -->
+    <section id="about" class="hero">
+      <div>
+        <h1>Yu-Jhe Li <span style="font-weight:500;color:var(--fg-muted);">(李宇哲)</span></h1>
+        <div class="subtitle">Software Engineer @ Google · Generative AI · ML / Computer Vision</div>
+        <p>
+          I am a Software Engineer at <strong>Google</strong>, working on generative AI–related projects.
+          Previously, I was a Research Scientist at <strong>Adobe</strong> and <strong>Microsoft</strong>.
+        </p>
+        <p>
+          I received my Ph.D. in Electrical and Computer Engineering from
+          <strong>Carnegie Mellon University (CMU)</strong>, advised by Prof.
+          <a href="http://www.cs.cmu.edu/~kkitani/" target="_blank" rel="noopener">Kris Kitani</a>.
+          During my Ph.D., I interned at
+          <a href="https://research.facebook.com/" target="_blank" rel="noopener">Meta Research</a> (twice) and
+          <a href="https://research.adobe.com/" target="_blank" rel="noopener">Adobe Research</a>.
+        </p>
+        <p>
+          I earned my M.Sc. from <strong>National Taiwan University</strong> (國立台灣大學), advised by Prof.
+          <a href="http://vllab.ee.ntu.edu.tw/members.html" target="_blank" rel="noopener">Yu-Chiang Frank Wang</a>
+          at the Vision and Learning Lab, and my B.S. from
+          <strong>National Tsing Hua University</strong> (國立清華大學).
+        </p>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>News</heading>
-              
-              <p><li>Sep. 2025: &nbsp One paper is accepted to NeurIPS 2025 as oral.</li></p>
-              <p><li>Jul. 2025: &nbsp One paper is accepted to COLM 2025.</li></p>
-              <p><li>Feb. 2024: &nbsp One paper is accepted to CVPR 2024.</li></p>
-              <p><li>Aug. 2023: &nbsp I successfully defended my PhD!</li></p>
-              <p><li>Feb. 2023: &nbsp One paper is accepted to CVPR 2023.</li></p>
-              <p><li>Feb. 2023: &nbsp One paper is accepted to ICASSP 2023 special track.</li></p>
-              <p><li>Aug. 2022: &nbsp Received Qualcomm Innocation Fellowship (only 19 teams in US, see <a href="https://www.qualcomm.com/research/university-relations/innovation-fellowship/2022-north-america" target="_blank">this</a>)</li></p>
-              <p><li>Jul. 2022: &nbsp One paper is accepted to ECCV 2022.</li></p>
-              <p><li>Mar. 2022: &nbsp Two papers are accepted to CVPR 2022.</li></p>
-              <!-- <p><li>Sep. 2021: &nbsp One paper is received Best Industry Impact Award to ICIP2021.</li></p>
-              <p><li>Jul. 2021: &nbsp One paper is accepted to ICCV2021.</li></p> -->
-              <!-- <p><li>May. 2021: &nbsp Start my summer intership at Facebook.</li></p> -->
-              <!-- <p><li>May. 2021: &nbsp One paper is accepted to ICIP2021.</li></p>
-              <p><li>Mar. 2021: &nbsp One paper is accepted to CVPR2021.</li></p> -->
-              <!-- <p><li>Nov. 2020: &nbsp One paper is accepted to WACV2021.</li></p> -->
-              <!-- <p><li>Sep. 2020: &nbsp One paper is accepted to ACCV2020.</li></p> -->
-              <!-- <p><li>Aug. 2020: &nbsp Start my Ph.D. program at CMU.</li></p> -->
+        <div class="links">
+          <a href="mailto:yujhe.jack@gmail.com">✉ Email</a>
+          <a href="https://www.linkedin.com/in/yu-jhe-li-a8a272127/" target="_blank" rel="noopener">in LinkedIn</a>
+          <a href="https://scholar.google.com/citations?hl=en&user=MpLiwTIAAAAJ" target="_blank" rel="noopener">🎓 Google Scholar</a>
+          <a href="https://github.com/yujheli" target="_blank" rel="noopener">⌥ GitHub</a>
+        </div>
+      </div>
+      <div class="photo">
+        <img alt="Yu-Jhe Li" src="fig/yujhe_2024.jpg">
+      </div>
+    </section>
 
-              
-            </td>
-          </tr>
-        </tbody></table>
+    <!-- ===== News ===== -->
+    <section id="news" class="section">
+      <div class="section-header">
+        <h2>News</h2>
+        <span class="meta">Recent updates</span>
+      </div>
+      <ul class="news-list">
+        <li><span class="date">Sep 2025</span><span class="desc">One paper accepted to <strong>NeurIPS 2025</strong> as <strong>Oral</strong>.</span></li>
+        <li><span class="date">Jul 2025</span><span class="desc">One paper accepted to <strong>COLM 2025</strong>.</span></li>
+        <li><span class="date">Feb 2024</span><span class="desc">One paper accepted to <strong>CVPR 2024</strong>.</span></li>
+        <li><span class="date">Aug 2023</span><span class="desc">Successfully defended my <strong>Ph.D.</strong> at CMU! 🎓</span></li>
+        <li><span class="date">Feb 2023</span><span class="desc">One paper accepted to <strong>CVPR 2023</strong>.</span></li>
+        <li><span class="date">Feb 2023</span><span class="desc">One paper accepted to <strong>ICASSP 2023</strong> special track.</span></li>
+        <li><span class="date">Aug 2022</span><span class="desc">Received <strong>Qualcomm Innovation Fellowship</strong> (one of only 19 teams in the US — <a href="https://www.qualcomm.com/research/university-relations/innovation-fellowship/2022-north-america" target="_blank" rel="noopener">details</a>).</span></li>
+        <li><span class="date">Jul 2022</span><span class="desc">One paper accepted to <strong>ECCV 2022</strong>.</span></li>
+        <li><span class="date">Mar 2022</span><span class="desc">Two papers accepted to <strong>CVPR 2022</strong>.</span></li>
+      </ul>
+    </section>
 
+    <!-- ===== Research ===== -->
+    <section id="research" class="section">
+      <div class="section-header">
+        <h2>Research</h2>
+        <span class="meta">Interests &amp; focus</span>
+      </div>
+      <p>
+        My research interests span <strong>Machine Learning (ML)</strong> and <strong>Computer Vision (CV)</strong>, particularly:
+      </p>
+      <ul class="research-list">
+        <li>Advanced <strong>multi-modal visual representation learning</strong> for perception, reasoning, and generation.</li>
+        <li>Methods for <strong>unsupervised domain adaptation</strong> and data/label-efficient learning, contributing to generative AI, autonomous systems, and XR.</li>
+        <li>Leveraging <strong>multi-modal large language models</strong> and <strong>diffusion models</strong> to improve efficiency, adaptability, and real-world applicability of intelligent systems.</li>
+      </ul>
+    </section>
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Research</heading>
-              <p>
-              My research interests span the fields of <b>Machine Learning (ML)</b> and <b>Computer Vision (CV)</b>,  particularly:
-              <p><li>Advanced multi-modal visual representation learning for perception, reasoning, and generation.</li></p>
-              <p><li>Developed methods in unsupervised domain adaptation and data/label-efficient learning, contributing to generative AI, autonomous systems, and XR.</li></p>
-              <p><li>Leveraged multi-modal large language models and diffusion models to improve efficiency, adaptability, and real-world applicability of intelligent systems.</li></p>
+    <!-- ===== Publications ===== -->
+    <section id="publications" class="section">
+      <div class="section-header">
+        <h2>Publications</h2>
+        <div class="filters" id="filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="2025">2025</button>
+          <button class="filter-btn" data-filter="2024">2024</button>
+          <button class="filter-btn" data-filter="2023">2023</button>
+          <button class="filter-btn" data-filter="2022">2022</button>
+          <button class="filter-btn" data-filter="≤2021">≤ 2021</button>
+        </div>
+      </div>
 
-              
+      <div class="pub-list" id="pubList">
 
+        <!-- 2025 -->
+        <article class="pub" data-year="2025">
+          <div class="pub-thumb"><img src="pub/fp32.png" alt="paper thumbnail"></div>
+          <div class="pub-body">
+            <div class="pub-title">Understanding and Mitigating Numerical Sources of Nondeterminism in LLM Inference <span class="pub-tag oral">NeurIPS Oral</span></div>
+            <div class="pub-authors">Jiayi Yuan, Hao Li, Xinheng Ding, Wenya Xie, <span class="me">Yu-Jhe Li</span>, Wentian Zhao, Kun Wan, Jing Shi, Xia Hu, Zirui Liu</div>
+            <div class="pub-venue">Conference on Neural Information Processing Systems (NeurIPS), 2025</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/pdf/2506.09501" target="_blank" rel="noopener">arXiv</a>
+            </div>
+          </div>
+        </article>
 
+        <article class="pub" data-year="2025">
+          <div class="pub-thumb"><img src="pub/self-dpo.png" alt="paper thumbnail"></div>
+          <div class="pub-body">
+            <div class="pub-title">Efficient Self-Improvement in Multimodal Large Language Models: A Model-Level Judge-Free Approach</div>
+            <div class="pub-authors">Shijian Deng, Wentian Zhao, <span class="me">Yu-Jhe Li</span>, Kun Wan, Daniel Miranda, Ajinkya Kale, Yapeng Tian</div>
+            <div class="pub-venue">Conference on Language Modeling (COLM), 2025</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2411.17760" target="_blank" rel="noopener">arXiv</a>
+            </div>
+          </div>
+        </article>
 
+        <!-- 2024 -->
+        <article class="pub" data-year="2024">
+          <div class="pub-thumb"><img src="pub/asc.png" alt="paper thumbnail"></div>
+          <div class="pub-body">
+            <div class="pub-title">Flexible Depth Completion for Sparse and Varying Point Densities</div>
+            <div class="pub-authors">Jinhyung Park, <span class="me">Yu-Jhe Li</span>, Kris Kitani</div>
+            <div class="pub-venue">IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2024</div>
+            <div class="pub-links">
+              <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Park_Flexible_Depth_Completion_for_Sparse_and_Varying_Point_Densities_CVPR_2024_paper.pdf" target="_blank" rel="noopener">Paper</a>
+            </div>
+          </div>
+        </article>
 
-              <!-- <p><li>Cross-modality 3D human pose reconstruction for XR applications.</li></p> -->
-              <!-- particularly representation learning, domain adaptation, object detection, tracking, and re-identification. -->
-              <!-- ,  in recognition systems (object detection, tracking, re-identification), and rendering from latents (NeRF and generative models). I would love to explore more open-ended problems in recognition leveraging visual representation learning. -->
-              </p>
-            </td>
-          </tr>
-        </tbody></table>
-        
+        <article class="pub" data-year="2024">
+          <div class="pub-thumb"><img src="pub/uncalib.png" alt="paper thumbnail"></div>
+          <div class="pub-body">
+            <div class="pub-title">Multi-Person 3D Pose Estimation from Multi-View Uncalibrated Depth Cameras</div>
+            <div class="pub-authors"><span class="me">Yu-Jhe Li</span>, Yan Xu, Rawal Khirodkar, Jinhyung Park, Kris Kitani</div>
+            <div class="pub-venue">Preprint, arXiv, 2024</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2401.15616" target="_blank" rel="noopener">arXiv</a>
+            </div>
+          </div>
+        </article>
 
+        <!-- 2023 -->
+        <article class="pub" data-year="2023">
+          <div class="pub-thumb"><img src="pub/thesis_teasor.png" alt="paper thumbnail"></div>
+          <div class="pub-body">
+            <div class="pub-title">Domain Adapted Visual Representation Learning for Machine Perception <span class="pub-tag">PhD Thesis</span></div>
+            <div class="pub-authors"><span class="me">Yu-Jhe Li</span></div>
+            <div class="pub-venue">Ph.D. Thesis, Carnegie Mellon University, 2023</div>
+            <div class="pub-venue" style="font-style:normal;">Committee: Kris Kitani, Matthew O'Toole, Jun-Yan Zhu, Deva Ramanan</div>
+            <div class="pub-links">
+              <a href="https://kilthub.cmu.edu/articles/thesis/Domain_Adapted_Visual_Representation_Learning_for_Machine_Perception/24268864" target="_blank" rel="noopener">Thesis</a>
+            </div>
+          </div>
+        </article>
 
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <tr>
-            <td>
-              <heading>Publications (selected)</heading>
-            </td>
-          </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="pub/fp32.png" alt="clean-usnob" width="200"  class="img-responsive">
-            </td>
-            <td width="75%" valign="middle">
-              <a>
-                <papertitle>Understanding and Mitigating Numerical Sources of Nondeterminism in LLM Inference</papertitle>
-              </a>
-              <br>
-              Jiayi Yuan, Hao Li, Xinheng Ding, Wenya Xie, <strong>Yu-Jhe Li</strong>, Wentian Zhao, Kun Wan, Jing Shi, Xia Hu, Zirui Liu
-              <br>
-              <em>Conference on Neural Information Processing Systems (NeurIPS)</em>, 2025
-              <br>
-              <a href="https://arxiv.org/pdf/2506.09501" target="_blank">Arxiv</a>
-              
-            </td>
-          </tr>
+        <article class="pub" data-year="2023">
+          <div class="pub-thumb"><img src="pub/radar_teasor.png" alt="paper thumbnail"></div>
+          <div class="pub-body">
+            <div class="pub-title">Azimuth Super-Resolution for FMCW Radar in Autonomous Driving</div>
+            <div class="pub-authors"><span class="me">Yu-Jhe Li</span>, Shawn Hunt, Jinhyung Park, Matthew O'Toole, Kris Kitani</div>
+            <div class="pub-venue">IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2023</div>
+            <div class="pub-links">
+              <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Li_Azimuth_Super-Resolution_for_FMCW_Radar_in_Autonomous_Driving_CVPR_2023_paper.pdf" target="_blank" rel="noopener">Paper</a>
+              <a href="https://github.com/yujheli/Pitt-Radar" target="_blank" rel="noopener">Dataset &amp; Code</a>
+            </div>
+          </div>
+        </article>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="pub/self-dpo.png" alt="clean-usnob" width="200"  class="img-responsive">
-            </td>
-            <td width="75%" valign="middle">
-              <a>
-                <papertitle>Efficient Self-Improvement in Multimodal Large Language Models: A Model-Level Judge-Free Approach</papertitle>
-              </a>
-              <br>
-              Shijian Deng, Wentian Zhao, <strong>Yu-Jhe Li</strong>, Kun Wan, Daniel Miranda, Ajinkya Kale, Yapeng Tian
-              <br>
-              <em>Conference on Language Modeling (COLM)</em>, 2025
-              <br>
-              <a href="https://arxiv.org/abs/2411.17760" target="_blank">Arxiv</a>
-              
-            </td>
-          </tr>
+        <article class="pub" data-year="2023">
+          <div class="pub-thumb"><img src="pub/3dclf.gif" alt="paper thumbnail"></div>
+          <div class="pub-body">
+            <div class="pub-title">3D-CLFusion: Fast Text-to-3D Rendering with Contrastive Latent Diffusion</div>
+            <div class="pub-authors"><span class="me">Yu-Jhe Li</span>, Tao Xu, Ji Hou, Bichen Wu, Xiaoliang Dai, Albert Pumarola, Peizhao Zhang, Peter Vajda, Kris Kitani</div>
+            <div class="pub-venue">Preprint, arXiv, 2023</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2303.11938" target="_blank" rel="noopener">arXiv</a>
+            </div>
+          </div>
+        </article>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="pub/asc.png" alt="clean-usnob" width="200"  class="img-responsive">
-            </td>
-            <td width="75%" valign="middle">
-              <a>
-                <papertitle>Flexible Depth Completion for Sparse and Varying Point Densities</papertitle>
-              </a>
-              <br>
-              Jinhyung Park, <strong>Yu-Jhe Li</strong>, Kris Kitani
-              <br>
-              <em>IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</em>, 2024
-              <br>
-              <a href="https://openaccess.thecvf.com/content/CVPR2024/papers/Park_Flexible_Depth_Completion_for_Sparse_and_Varying_Point_Densities_CVPR_2024_paper.pdf" target="_blank">Paper</a>
-              
-            </td>
-          </tr>
+        <article class="pub" data-year="2023">
+          <div class="pub-thumb"><img src="pub/mvd2_teasor.png" alt="paper thumbnail"></div>
+          <div class="pub-body">
+            <div class="pub-title">ST-MVDNet++: Improve Vehicle Detection with Lidar-Radar Geometrical Augmentation via Self-Training</div>
+            <div class="pub-authors"><span class="me">Yu-Jhe Li</span>, Matthew O'Toole, Kris Kitani</div>
+            <div class="pub-venue">IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP), 2023</div>
+            <div class="pub-links">
+              <a href="https://ieeexplore.ieee.org/abstract/document/10096041" target="_blank" rel="noopener">Paper</a>
+            </div>
+          </div>
+        </article>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="pub/uncalib.png" alt="clean-usnob" width="250"  class="img-responsive">
-            </td>
-            <td width="75%" valign="middle">
-              <a>
-                <papertitle>Multi-Person 3D Pose Estimation from Multi-View Uncalibrated Depth Cameras</papertitle>
-              </a>
-              <br>
-              <strong>Yu-Jhe Li</strong>, Yan Xu, Rawal Khirodkar, Jinhyung Park, Kris Kitani
-              <br>
-              <em>Preprint. Arxiv</em>, 2024
-              <br>
-              <a href="https://arxiv.org/abs/2401.15616" target="_blank">ArXiv</a>
-              <!-- <p>We use computer vision techniques to identify and remove diffraction spikes and reflection halos in the USNO-B Catalog.</p> -->
-              <!-- <br>
-              <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Li_Azimuth_Super-Resolution_for_FMCW_Radar_in_Autonomous_Driving_CVPR_2023_paper.pdf" target="_blank">Paper</a>/
-              <a href="https://github.com/yujheli/Pitt-Radar" target="_blank">Dataset & Code</a> -->
-           
+        <!-- 2022 -->
+        <article class="pub" data-year="2022">
+          <div class="pub-thumb"><img src="pub/nerf-3de.gif" alt="paper thumbnail"></div>
+          <div class="pub-body">
+            <div class="pub-title">3D-Aware Encoding for Style-based Neural Radiance Fields</div>
+            <div class="pub-authors"><span class="me">Yu-Jhe Li</span>, Tao Xu, Bichen Wu, Ningyuan Zheng, Xiaoliang Dai, Albert Pumarola, Peizhao Zhang, Peter Vajda, Kris Kitani</div>
+            <div class="pub-venue">Preprint, arXiv, 2022</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2211.06583" target="_blank" rel="noopener">arXiv</a>
+            </div>
+          </div>
+        </article>
 
-            </td>
-          </tr>
-          
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="pub/thesis_teasor.png" alt="clean-usnob" width="250"  class="img-responsive">
-            </td>
-            <td width="100%" valign="middle">
-              <a>
-                <papertitle>Domain Adapted Visual Representation Learning for Machine Perception</papertitle>
-              </a>
-              <br>
-              <strong>Yu-Jhe Li</strong>
-              <br>
-              <em>Ph.D. Thesis, Carnegie Mellon University</em>, 2023
-              <!-- <p>We use computer vision techniques to identify and remove diffraction spikes and reflection halos in the USNO-B Catalog.</p> -->
-              <br>
-              <em></em>Committee members: Kris Kitani, Matthew O'Toole, Jun-Yan Zhu, Deva Ramanan</em>
-              <br>
-              <a href="https://kilthub.cmu.edu/articles/thesis/Domain_Adapted_Visual_Representation_Learning_for_Machine_Perception/24268864" target="_blank">Paper</a>
-           
-            </td>
-          </tr>
+        <article class="pub" data-year="2022">
+          <div class="pub-thumb"><img src="pub/dahand.png" alt="paper thumbnail"></div>
+          <div class="pub-body">
+            <div class="pub-title">Domain Adaptive Hand Keypoint and Pixel Localization in the Wild</div>
+            <div class="pub-authors">Takehiko Ohkawa, <span class="me">Yu-Jhe Li</span>, Qichen Fu, Ryosuke Furuta, Kris M. Kitani, Yoichi Sato</div>
+            <div class="pub-venue">European Conference on Computer Vision (ECCV), 2022</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2203.08344" target="_blank" rel="noopener">arXiv</a>
+            </div>
+          </div>
+        </article>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="pub/radar_teasor.png" alt="clean-usnob" width="250"  class="img-responsive">
-            </td>
-            <td width="75%" valign="middle">
-              <a>
-                <papertitle>Azimuth Super-Resolution for FMCW Radar in Autonomous Driving</papertitle>
-              </a>
-              <br>
-              <strong>Yu-Jhe Li</strong>, Shawn Hunt, Jinhyung Park, Matthew O'Toole, Kris Kitani
-              <br>
-              <em>IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</em>, 2023
-              <!-- <p>We use computer vision techniques to identify and remove diffraction spikes and reflection halos in the USNO-B Catalog.</p> -->
-              <br>
-              <a href="https://openaccess.thecvf.com/content/CVPR2023/papers/Li_Azimuth_Super-Resolution_for_FMCW_Radar_in_Autonomous_Driving_CVPR_2023_paper.pdf" target="_blank">Paper</a>/
-              <a href="https://github.com/yujheli/Pitt-Radar" target="_blank">Dataset & Code</a>
-           
+        <article class="pub" data-year="2022">
+          <div class="pub-thumb"><img src="pub/aut.png" alt="paper thumbnail"></div>
+          <div class="pub-body">
+            <div class="pub-title">Cross-Domain Adaptive Teacher for Object Detection</div>
+            <div class="pub-authors"><span class="me">Yu-Jhe Li</span>, Xiaoliang Dai, Chih-Yao Ma, Yen-Cheng Liu, Kan Chen, Bichen Wu, Zijian He, Kris Kitani, Peter Vajda</div>
+            <div class="pub-venue">IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2022</div>
+            <div class="pub-links">
+              <a href="https://yujheli.github.io/projects/adaptiveteacher.html" target="_blank" rel="noopener">Project</a>
+              <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Li_Cross-Domain_Adaptive_Teacher_for_Object_Detection_CVPR_2022_paper.pdf" target="_blank" rel="noopener">Paper</a>
+              <a href="https://github.com/facebookresearch/adaptive_teacher" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </article>
 
-            </td>
-          </tr>
+        <article class="pub" data-year="2022">
+          <div class="pub-thumb"><img src="pub/radarlidar.png" alt="paper thumbnail"></div>
+          <div class="pub-body">
+            <div class="pub-title">Modality-Agnostic Learning for Radar-Lidar Fusion in Vehicle Detection</div>
+            <div class="pub-authors"><span class="me">Yu-Jhe Li</span>, Jinhyung Park, Matthew O'Toole, Kris Kitani</div>
+            <div class="pub-venue">IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2022</div>
+            <div class="pub-links">
+              <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Li_Modality-Agnostic_Learning_for_Radar-Lidar_Fusion_in_Vehicle_Detection_CVPR_2022_paper.pdf" target="_blank" rel="noopener">Paper</a>
+            </div>
+          </div>
+        </article>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="pub/3dclf.gif" alt="clean-usnob" width="250" class="img-responsive">
-            </td>
-            <td width="75%" valign="middle">
-              <a>
-                <papertitle>3D-CLFusion: Fast Text-to-3D Rendering with Contrastive Latent Diffusion</papertitle>
-              </a>
-              <br>
-              <!-- <strong>Yu-Jhe Li</strong> (author list update pending) -->
-              <strong>Yu-Jhe Li</strong>, Tao Xu, Ji Hou, Bichen Wu, Xiaoliang Dai, Albert Pumarola, Peizhao Zhang, Peter Vajda, Kris Kitani
-              <br>
-              <em>Preprint. Arxiv</em> 2023
-              <br>
-              <a href="https://arxiv.org/abs/2303.11938" target="_blank">ArXiv</a>
+        <!-- ≤ 2021 -->
+        <article class="pub" data-year="≤2021">
+          <div class="pub-thumb"><img src="pub/mtmct.png" alt="paper thumbnail"></div>
+          <div class="pub-body">
+            <div class="pub-title">Visio-Temporal Attention for Multi-Camera Multi-Target Association</div>
+            <div class="pub-authors"><span class="me">Yu-Jhe Li</span>, Xinshuo Weng, Yan Xu, Kris Kitani</div>
+            <div class="pub-venue">IEEE International Conference on Computer Vision (ICCV), 2021</div>
+            <div class="pub-links">
+              <a href="https://openaccess.thecvf.com/content/ICCV2021/papers/Li_Visio-Temporal_Attention_for_Multi-Camera_Multi-Target_Association_ICCV_2021_paper.pdf" target="_blank" rel="noopener">CVF Paper</a>
+            </div>
+          </div>
+        </article>
 
-            </td>
-          </tr>
+        <article class="pub" data-year="≤2021">
+          <div class="pub-thumb"><img src="pub/calib.png" alt="paper thumbnail"></div>
+          <div class="pub-body">
+            <div class="pub-title">Wide-Baseline Multi-Camera Calibration using Person Re-Identification</div>
+            <div class="pub-authors">Yan Xu, <span class="me">Yu-Jhe Li</span>, Xinshuo Weng, Kris Kitani</div>
+            <div class="pub-venue">IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2021</div>
+            <div class="pub-links">
+              <a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Xu_Wide-Baseline_Multi-Camera_Calibration_Using_Person_Re-Identification_CVPR_2021_paper.pdf" target="_blank" rel="noopener">CVF Paper</a>
+            </div>
+          </div>
+        </article>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="pub/mvd2_teasor.png" alt="clean-usnob" width="250"  class="img-responsive">
-            </td>
-            <td width="75%" valign="middle">
-              <a>
-                <papertitle>ST-MVDNet++: Improve Vehicle Detection with Lidar-Radar Geometrical Augmentation via Self-Training</papertitle>
-              </a>
-              <br>
-              <strong>Yu-Jhe Li</strong>, Matthew O'Toole, Kris Kitani
-              <br>
-              <em>IEEE International Conference on Acoustics, Speech and Signal Processing (ICASSP)</em>, 2023
-              <!-- <p>We use computer vision techniques to identify and remove diffraction spikes and reflection halos in the USNO-B Catalog.</p> -->
-              <br>
-              <a href="https://ieeexplore.ieee.org/abstract/document/10096041" target="_blank">Paper</a>
-           
+        <article class="pub" data-year="≤2021">
+          <div class="pub-thumb"><img src="pub/cloth_arxv.gif" alt="paper thumbnail"></div>
+          <div class="pub-body">
+            <div class="pub-title">Learning Shape Representations for Person Re-Identification under Clothing Change</div>
+            <div class="pub-authors"><span class="me">Yu-Jhe Li</span>, Xinshuo Weng, Kris Kitani</div>
+            <div class="pub-venue">Winter Conference on Applications of Computer Vision (WACV), 2021</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2003.07340v1" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://openaccess.thecvf.com/content/WACV2021/papers/Li_Learning_Shape_Representations_for_Person_Re-Identification_Under_Clothing_Change_WACV_2021_paper.pdf" target="_blank" rel="noopener">CVF Paper</a>
+            </div>
+          </div>
+        </article>
 
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="pub/nerf-3de.gif" alt="clean-usnob" width="250" class="img-responsive">
-            </td>
-            <td width="75%" valign="middle">
-              <a>
-                <papertitle>3D-Aware Encoding for Style-based Neural Radiance Fields</papertitle>
-              </a>
-              <br>
-              <strong>Yu-Jhe Li</strong>, Tao Xu, Bichen Wu, Ningyuan Zheng, Xiaoliang Dai, Albert Pumarola, Peizhao Zhang, Peter Vajda, Kris Kitani
-              <br>
-              <em>Preprint. Arxiv</em> 2022
-              <br>
-              <a href="https://arxiv.org/abs/2211.06583" target="_blank">ArXiv</a>
+        <article class="pub" data-year="≤2021">
+          <div class="pub-thumb"><img src="pub/yt_accv20.png" alt="paper thumbnail"></div>
+          <div class="pub-body">
+            <div class="pub-title">Transforming Multi-Concept Attention into Video Summarization</div>
+            <div class="pub-authors">Yen-Ting Liu, <span class="me">Yu-Jhe Li</span>, Yu-Chiang Frank Wang</div>
+            <div class="pub-venue">Asian Conference on Computer Vision (ACCV), 2020</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/pdf/2006.01410.pdf" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://openaccess.thecvf.com/content/ACCV2020/papers/Liu_Transforming_Multi-Concept_Attention_into_Video_Summarization_ACCV_2020_paper.pdf" target="_blank" rel="noopener">CVF Paper</a>
+            </div>
+          </div>
+        </article>
 
-            </td>
-          </tr>
-          
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="pub/dahand.png" alt="clean-usnob" width="250"  class="img-responsive">
-            </td>
-            <td width="75%" valign="middle">
-              <a>
-                <papertitle>Domain Adaptive Hand Keypoint and Pixel Localization in the Wild</papertitle>
-              </a>
-              <br>
-              Takehiko Ohkawa, <strong>Yu-Jhe Li</strong>, Qichen Fu, Ryosuke Furuta, Kris M. Kitani, and Yoichi Sato
-              <br>
-              <em>European Conference on Computer Vision (ECCV)</em>, 2022
-              <!-- <p>We use computer vision techniques to identify and remove diffraction spikes and reflection halos in the USNO-B Catalog.</p> -->
-              <br>
-              <a href="https://arxiv.org/abs/2203.08344" target="_blank">Arxiv</a>
-           
+        <article class="pub" data-year="≤2021">
+          <div class="pub-thumb"><img src="pub/cross_pami.png" alt="paper thumbnail"></div>
+          <div class="pub-body">
+            <div class="pub-title">Cross-Resolution Adversarial Dual Network for Person Re-Identification and Beyond</div>
+            <div class="pub-authors"><span class="me">Yu-Jhe Li*</span>, Yun-Chun Chen*, Yen-Yu Lin, Yu-Chiang Frank Wang &nbsp;<em>(* equal contribution)</em></div>
+            <div class="pub-venue">Preprint, arXiv, 2020</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/2002.09274" target="_blank" rel="noopener">arXiv</a>
+            </div>
+          </div>
+        </article>
 
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="pub/aut.png" alt="clean-usnob" width="250" class="img-responsive">
-            </td>
-            <td width="75%" valign="middle">
-              <a>
-                <papertitle>Cross-Domain Adaptive Teacher for Object Detection</papertitle>
-              </a>
-              <br>
-              <strong>Yu-Jhe Li</strong>, Xiaoliang Dai, Chih-Yao Ma, Yen-Cheng Liu, Kan Chen, Bichen Wu, Zijian He, Kris Kitani, Peter Vajda
-              <br>
-              <em>IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</em>, 2022
-              <!-- <p>We use computer vision techniques to identify and remove diffraction spikes and reflection halos in the USNO-B Catalog.</p> -->
-              <br>
-              <a href="https://yujheli.github.io/projects/adaptiveteacher.html" target="_blank">Project Page</a>/
-              <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Li_Cross-Domain_Adaptive_Teacher_for_Object_Detection_CVPR_2022_paper.pdf" target="_blank">Paper</a>/
-              <a href="https://github.com/facebookresearch/adaptive_teacher" target="_blank">Code</a>
+        <article class="pub" data-year="≤2021">
+          <div class="pub-thumb"><img src="pub/pda_net.gif" alt="paper thumbnail"></div>
+          <div class="pub-body">
+            <div class="pub-title">Cross-Dataset Person Re-Identification via Unsupervised Pose Disentanglement and Adaptation</div>
+            <div class="pub-authors"><span class="me">Yu-Jhe Li</span>, Ci-Siang Lin, Yan-Bo Lin, Yu-Chiang Frank Wang</div>
+            <div class="pub-venue">IEEE International Conference on Computer Vision (ICCV), 2019</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/1909.09675" target="_blank" rel="noopener">arXiv</a>
+              <a href="http://openaccess.thecvf.com/content_ICCV_2019/papers/Li_Cross-Dataset_Person_Re-Identification_via_Unsupervised_Pose_Disentanglement_and_Adaptation_ICCV_2019_paper.pdf" target="_blank" rel="noopener">CVF Paper</a>
+              <a href="https://github.com/yujheli/PDA-Net" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </article>
 
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="pub/radarlidar.png" alt="clean-usnob" width="250" class="img-responsive">
-            </td>
-            <td width="75%" valign="middle">
-              <a>
-                <papertitle>Modality-Agnostic Learning for Radar-Lidar Fusion in Vehicle Detection</papertitle>
-              </a>
-              <br>
-              <strong>Yu-Jhe Li</strong>, Jinhyung Park, Matthew O'Toole, Kris Kitani
-              <br>
-              <em>IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</em>, 2022
-              <!-- <p>We use computer vision techniques to identify and remove diffraction spikes and reflection halos in the USNO-B Catalog.</p> -->
-              <br>
-              <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Li_Modality-Agnostic_Learning_for_Radar-Lidar_Fusion_in_Vehicle_Detection_CVPR_2022_paper.pdf" target="_blank">Paper</a>
-           
+        <article class="pub" data-year="≤2021">
+          <div class="pub-thumb"><img src="pub/cad_net.png" alt="paper thumbnail"></div>
+          <div class="pub-body">
+            <div class="pub-title">Recover and Identify: A Generative Dual Model for Cross-Resolution Person Re-Identification</div>
+            <div class="pub-authors"><span class="me">Yu-Jhe Li*</span>, Yun-Chun Chen*, Yen-Yu Lin, Xiao-fei Du, Yu-Chiang Frank Wang &nbsp;<em>(* equal contribution)</em></div>
+            <div class="pub-venue">IEEE International Conference on Computer Vision (ICCV), 2019</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/1908.06052" target="_blank" rel="noopener">arXiv</a>
+              <a href="http://openaccess.thecvf.com/content_ICCV_2019/papers/Li_Recover_and_Identify_A_Generative_Dual_Model_for_Cross-Resolution_Person_ICCV_2019_paper.pdf" target="_blank" rel="noopener">CVF Paper</a>
+            </div>
+          </div>
+        </article>
 
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="pub/mtmct.png" width="250" >
-            </td>
-            <td width="75%" valign="middle">
-              <a>
-                <papertitle>Visio-Temporal Attention for Multi- Camera Multi-Target Association.</papertitle>
-              </a>
-              <br>
-              <strong>Yu-Jhe Li</strong>, Xinshuo Weng, Yan Xu, Kris Kitani
-              <br>
-              <em>IEEE International Conference on Computer Vision (ICCV)</em>, 2021
-              <!-- <p>We use computer vision techniques to identify and remove diffraction spikes and reflection halos in the USNO-B Catalog.</p> -->
-              <br>
-              <a href="https://openaccess.thecvf.com/content/ICCV2021/papers/Li_Visio-Temporal_Attention_for_Multi-Camera_Multi-Target_Association_ICCV_2021_paper.pdf" target="_blank">CVF Paper</a>
-              <!-- <a href="https://arxiv.org/abs/2003.07340v1" target="_blank">ArXiv (old version)</a>/
-              <a href="https://openaccess.thecvf.com/content/WACV2021/papers/Li_Learning_Shape_Representations_for_Person_Re-Identification_Under_Clothing_Change_WACV_2021_paper.pdf" target="_blank">CVF Paper</a> -->
+        <article class="pub" data-year="≤2021">
+          <div class="pub-thumb"><img src="pub/few-shot.png" alt="paper thumbnail"></div>
+          <div class="pub-body">
+            <div class="pub-title">Spot and Learn: A Maximum-Entropy Image Patch Sampler for Few-Shot Classification</div>
+            <div class="pub-authors">Wen-Hsuan Chu, <span class="me">Yu-Jhe Li</span>, Jing-Cheng Chang, Yu-Chiang Frank Wang</div>
+            <div class="pub-venue">IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2019</div>
+            <div class="pub-links">
+              <a href="http://openaccess.thecvf.com/content_CVPR_2019/papers/Chu_Spot_and_Learn_A_Maximum-Entropy_Patch_Sampler_for_Few-Shot_Image_CVPR_2019_paper.pdf" target="_blank" rel="noopener">CVF Paper</a>
+            </div>
+          </div>
+        </article>
 
-            </td>
-          </tr>
+        <article class="pub" data-year="≤2021">
+          <div class="pub-thumb"><img src="pub/aaai.png" alt="paper thumbnail"></div>
+          <div class="pub-body">
+            <div class="pub-title">Learning Resolution-Invariant Deep Representations for Person Re-Identification <span class="pub-tag oral">Oral</span></div>
+            <div class="pub-authors"><span class="me">Yu-Jhe Li*</span>, Yun-Chun Chen*, Xiao-fei Du, Yu-Chiang Frank Wang &nbsp;<em>(* equal contribution)</em></div>
+            <div class="pub-venue">AAAI Conference on Artificial Intelligence (AAAI), 2019</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/1907.10843" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://wvvw.aaai.org/ojs/index.php/AAAI/article/view/4832/4705" target="_blank" rel="noopener">AAAI Paper</a>
+            </div>
+          </div>
+        </article>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="pub/calib.png" width="250" >
-            </td>
-            <td width="75%" valign="middle">
-              <a>
-                <papertitle>Wide-Baseline Multi-Camera Calibration using Person Re-Identification</papertitle>
-              </a>
-              <br>
-              Yan Xu, <strong>Yu-Jhe Li</strong>, Xinshuo Weng, Kris Kitani
-              <br>
-              <em>IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</em>, 2021
-              <!-- <p>We use computer vision techniques to identify and remove diffraction spikes and reflection halos in the USNO-B Catalog.</p>
-              <br> -->
-              <br>
-              <!-- <a href="https://arxiv.org/abs/2003.07340v1" target="_blank">ArXiv (old version)</a>/ -->
-              <a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Xu_Wide-Baseline_Multi-Camera_Calibration_Using_Person_Re-Identification_CVPR_2021_paper.pdf" target="_blank">CVF Paper</a>
+        <article class="pub" data-year="≤2021">
+          <div class="pub-thumb"><img src="pub/lf2.jpg" alt="paper thumbnail"></div>
+          <div class="pub-body">
+            <div class="pub-title">Deep Reinforcement Learning for Playing 2.5D Fighting Games</div>
+            <div class="pub-authors"><span class="me">Yu-Jhe Li*</span>, Hsin-Yu Chang*, Yu-Jing Lin, Po-Wei Wu, Yu-Chiang Frank Wang &nbsp;<em>(* equal contribution)</em></div>
+            <div class="pub-venue">IEEE International Conference on Image Processing (ICIP), 2018</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/1805.02070" target="_blank" rel="noopener">arXiv</a>
+              <a href="https://ieeexplore.ieee.org/document/8451491" target="_blank" rel="noopener">IEEE Paper</a>
+              <a href="https://github.com/elvisyjlin/lf2gym" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </article>
 
-            </td>
-          </tr>
+        <article class="pub" data-year="≤2021">
+          <div class="pub-thumb"><img src="pub/reid.png" alt="paper thumbnail"></div>
+          <div class="pub-body">
+            <div class="pub-title">Adaptation and Re-Identification Network: An Unsupervised Deep Transfer Learning Approach to Person Re-Identification</div>
+            <div class="pub-authors"><span class="me">Yu-Jhe Li</span>, Fu-En Yang, Yen-Cheng Liu, Yu-Ying Yeh, Xiaofei Du, Yu-Chiang Frank Wang</div>
+            <div class="pub-venue">IEEE Conference on Computer Vision and Pattern Recognition (CVPR) Workshops, 2018</div>
+            <div class="pub-links">
+              <a href="https://arxiv.org/abs/1804.09347" target="_blank" rel="noopener">arXiv</a>
+              <a href="http://openaccess.thecvf.com/content_cvpr_2018_workshops/w6/html/Li_Adaptation_and_Re-Identification_CVPR_2018_paper.html" target="_blank" rel="noopener">Paper</a>
+              <a href="https://github.com/yujheli/ARN" target="_blank" rel="noopener">Code</a>
+            </div>
+          </div>
+        </article>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="pub/cloth_arxv.gif" width="250" height="200">
-            </td>
-            <td width="75%" valign="middle">
-              <a>
-                <papertitle>Learning Shape Representations for Person Re-Identification under Clothing Change</papertitle>
-              </a>
-              <br>
-              <strong>Yu-Jhe Li</strong>, Xinshuo Weng, Kris Kitani
-              <br>
-              <em>Winter Conference on Applications of Computer Vision (WACV)</em>, 2021
-              <!-- <p>We use computer vision techniques to identify and remove diffraction spikes and reflection halos in the USNO-B Catalog.</p> -->
-              <br>
-              <a href="https://arxiv.org/abs/2003.07340v1" target="_blank">ArXiv (old version)</a>/
-              <a href="https://openaccess.thecvf.com/content/WACV2021/papers/Li_Learning_Shape_Representations_for_Person_Re-Identification_Under_Clothing_Change_WACV_2021_paper.pdf" target="_blank">CVF Paper</a>
+      </div>
+    </section>
 
-            </td>
-          </tr>
+    <!-- ===== Education ===== -->
+    <section id="education" class="section">
+      <div class="section-header">
+        <h2>Education</h2>
+        <span class="meta">Academic background</span>
+      </div>
+      <div class="edu-list">
+        <div class="edu">
+          <div class="logo"><img src="fig/cmu.png" alt="CMU"></div>
+          <div class="info">
+            <div class="degree">Ph.D., Electrical and Computer Engineering</div>
+            <div class="school">Carnegie Mellon University</div>
+            <div class="loc">Pittsburgh, PA</div>
+            <div class="date">Sep 2020 – Aug 2023 &nbsp;·&nbsp; Sep 2019 – Aug 2020 (Research Associate, Robotics Institute)</div>
+          </div>
+        </div>
+        <div class="edu">
+          <div class="logo"><img src="fig/ntu.png" alt="NTU"></div>
+          <div class="info">
+            <div class="degree">M.S., Communication Engineering (Data Science Track)</div>
+            <div class="school">National Taiwan University</div>
+            <div class="loc">Taipei, Taiwan</div>
+            <div class="date">Sep 2017 – Jan 2019</div>
+          </div>
+        </div>
+        <div class="edu">
+          <div class="logo"><img src="fig/nthu.png" alt="NTHU"></div>
+          <div class="info">
+            <div class="degree">B.S., Electrical Engineering and Computer Science</div>
+            <div class="school">National Tsing Hua University</div>
+            <div class="loc">Hsinchu, Taiwan</div>
+            <div class="date">Sep 2013 – Jan 2017</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="pub/yt_accv20.png" alt="clean-usnob" width="250" height="200" class="img-responsive">
-            </td>
-            <td width="75%" valign="middle">
-              <a>
-                <papertitle>Transforming Multi-Concept Attention into Video Summarization</papertitle>
-              </a>
-              <br>
-              Yen-Ting Liu, <strong>Yu-Jhe Li</strong>, Yu-Chiang Frank Wang
-              <br>
-              <em>Asian Conference on Computer Vision (ACCV)</em>, 2020
-              <!-- <p>We use computer vision techniques to identify and remove diffraction spikes and reflection halos in the USNO-B Catalog.</p> -->
-              <br>
-              <a href="https://arxiv.org/pdf/2006.01410.pdf" target="_blank">ArXiv</a>/
-              <a href="https://openaccess.thecvf.com/content/ACCV2020/papers/Liu_Transforming_Multi-Concept_Attention_into_Video_Summarization_ACCV_2020_paper.pdf" target="_blank">CVF Paper</a>
-              <!-- <a href="http://openaccess.thecvf.com/content_ICCV_2019/papers/Li_Cross-Dataset_Person_Re-Identification_via_Unsupervised_Pose_Disentanglement_and_Adaptation_ICCV_2019_paper.pdf" target="_blank">CVF Paper</a>/
-              <a href="https://github.com/yujheli/PDA-Net" target="_blank">Code</a>
- -->
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="pub/cross_pami.png" alt="clean-usnob" width="250" class="img-responsive">
-            </td>
-            <td width="75%" valign="middle">
-              <a>
-                <papertitle>Cross-Resolution Adversarial Dual Network for Person Re-Identification and Beyond</papertitle>
-              </a>
-              <br>
-              <strong>Yu-Jhe Li*</strong>, Yun-Chun Chen*, Yen-Yu Lin, Yu-Chiang Frank Wang<br> (* indicates equal contribution)
-              <br>
-              <em>Preprint. Arxiv</em> 2020
-              <br>
-              <a href="https://arxiv.org/abs/2002.09274" target="_blank">ArXiv</a>
+    <!-- ===== Experiences ===== -->
+    <section id="experiences" class="section">
+      <div class="section-header">
+        <h2>Other Experiences</h2>
+        <span class="meta">Exchange programs</span>
+      </div>
+      <div class="edu-list">
+        <div class="edu">
+          <div class="logo"><img src="fig/umn.png" alt="UMN"></div>
+          <div class="info">
+            <div class="degree">Exchange Student</div>
+            <div class="school">University of Minnesota – Twin Cities</div>
+            <div class="loc">Minneapolis, MN, USA</div>
+            <div class="date">Aug 2016 – Dec 2016 (Fall semester)</div>
+          </div>
+        </div>
+        <div class="edu">
+          <div class="logo"><img src="fig/fudan.png" alt="Fudan"></div>
+          <div class="info">
+            <div class="degree">Exchange Student</div>
+            <div class="school">Fudan University</div>
+            <div class="loc">Shanghai, China</div>
+            <div class="date">Jul 2015 – Aug 2015 (Summer)</div>
+          </div>
+        </div>
+        <div class="edu">
+          <div class="logo"><img src="fig/tsinghua.png" alt="Tsinghua"></div>
+          <div class="info">
+            <div class="degree">Exchange Student</div>
+            <div class="school">Tsinghua University</div>
+            <div class="loc">Beijing, China</div>
+            <div class="date">Jul 2014 – Aug 2014 (Summer)</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            </td>
-          </tr>
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+      <div>© <span id="year"></span> Yu-Jhe Li · Built with care.</div>
+      <a href='https://clustrmaps.com/site/1awyt' title='Visit tracker' style="display:inline-block;">
+        <img src='//clustrmaps.com/map_v2.png?cl=ffffff&w=400&t=tt&d=6idYzhcISb1eSHmKgEO3XZIWWwba7x83F7OK8lw9Tnw&co=2d78ad&ct=ffffff' alt="visitor map">
+      </a>
+    </footer>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="pub/pda_net.gif" alt="clean-usnob" width="250" height="200" class="img-responsive">
-            </td>
-            <td width="75%" valign="middle">
-              <a>
-                <papertitle>Cross-Dataset Person Re-Identification via Unsupervised Pose Disentanglement and Adaptation</papertitle>
-              </a>
-              <br>
-              <strong>Yu-Jhe Li</strong>, Ci-Siang Lin, Yan-Bo Lin, Yu-Chiang Frank Wang
-              <br>
-              <em>IEEE International Conference on Computer Vision (ICCV)</em>, 2019
-              <!-- <p>We use computer vision techniques to identify and remove diffraction spikes and reflection halos in the USNO-B Catalog.</p> -->
-              <br>
-              <a href="https://arxiv.org/abs/1909.09675" target="_blank">ArXiv</a>/
-              <a href="http://openaccess.thecvf.com/content_ICCV_2019/papers/Li_Cross-Dataset_Person_Re-Identification_via_Unsupervised_Pose_Disentanglement_and_Adaptation_ICCV_2019_paper.pdf" target="_blank">CVF Paper</a>/
-              <a href="https://github.com/yujheli/PDA-Net" target="_blank">Code</a>
+  </main>
 
-            </td>
-          </tr>
-           
+  <button class="back-to-top" id="backToTop" aria-label="Back to top" title="Back to top">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"></polyline></svg>
+  </button>
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="pub/cad_net.png" alt="clean-usnob" width="250" height="200" class="img-responsive">
-            </td>
-            <td width="75%" valign="middle">
-              <a>
-                <papertitle>Recover and Identify: A Generative Dual Model for Cross-Resolution Person Re-Identification</papertitle>
-              </a>
-              <br>
-              <strong>Yu-Jhe Li*</strong>, Yun-Chun Chen*, Yen-Yu Lin, Xiao-fei Du, Yu-Chiang Frank Wang (*indicates equal contribution)
-              <br>
-              <em>IEEE International Conference on Computer Vision (ICCV)</em>, 2019
-              <!-- <p>We use computer vision techniques to identify and remove diffraction spikes and reflection halos in the USNO-B Catalog.</p> -->
-              <br>
-              <a href="https://arxiv.org/abs/1908.06052" target="_blank">ArXiv</a>/
-              <a href="http://openaccess.thecvf.com/content_ICCV_2019/papers/Li_Recover_and_Identify_A_Generative_Dual_Model_for_Cross-Resolution_Person_ICCV_2019_paper.pdf" target="_blank">CVF Paper</a>
-            </td>
-          </tr>
+  <script>
+    // ---------- Theme toggle (persistent) ----------
+    (function () {
+      const saved = localStorage.getItem('theme');
+      if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+      const sync = () => {
+        const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+        document.getElementById('iconSun').style.display = dark ? 'block' : 'none';
+        document.getElementById('iconMoon').style.display = dark ? 'none' : 'block';
+      };
+      sync();
+      document.getElementById('themeToggle').addEventListener('click', () => {
+        const dark = document.documentElement.getAttribute('data-theme') === 'dark';
+        document.documentElement.setAttribute('data-theme', dark ? 'light' : 'dark');
+        localStorage.setItem('theme', dark ? 'light' : 'dark');
+        sync();
+      });
+    })();
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="pub/few-shot.png" alt="clean-usnob" width="250" height="200" class="img-responsive">
-            </td>
-            <td width="75%" valign="middle">
-              <a>
-                <papertitle>Spot and Learn: A Maximum-Entropy Image Patch Sampler for Few-Shot Classification</papertitle>
-              </a>
-              <br>
-              Wen-Hsuan Chu, <strong>Yu-Jhe Li</strong>, Jing-Cheng Chang, Yu-Chiang Frank Wang
-              <br>
-              <em>IEEE Conference on Computer Vision and Pattern Recognition (CVPR)</em>, 2019
-              <!-- <p>We use computer vision techniques to identify and remove diffraction spikes and reflection halos in the USNO-B Catalog.</p> -->
-              <br>
-              <a href="http://openaccess.thecvf.com/content_CVPR_2019/papers/Chu_Spot_and_Learn_A_Maximum-Entropy_Patch_Sampler_for_Few-Shot_Image_CVPR_2019_paper.pdf" target="_blank">CVF Paper</a>
-            </td>
-          </tr>
+    // ---------- Mobile menu ----------
+    document.getElementById('menuToggle').addEventListener('click', () => {
+      document.getElementById('primary-nav').classList.toggle('open');
+    });
+    document.querySelectorAll('#primary-nav a').forEach(a =>
+      a.addEventListener('click', () => document.getElementById('primary-nav').classList.remove('open'))
+    );
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="pub/aaai.png" alt="clean-usnob" width="250" height="200" class="img-responsive">
-            </td>
-            <td width="75%" valign="middle">
-              <a>
-                <papertitle>Learning Resolution-Invariant Deep Representations for Person Re-Identification</papertitle>
-              </a>
-              <br>
-              <strong>Yu-Jhe Li*</strong>, Yun-Chun Chen*, Xiao-fei Du, Yu-Chiang Frank Wang (*indicates equal contribution)
-              <br>
-              <em>AAAI Conference on Artificial Intelligence (AAAI)</em>, 2019 &nbsp <font color="red"><strong>(Oral Presentation)</strong></font>
-              <!-- <p>We use computer vision techniques to identify and remove diffraction spikes and reflection halos in the USNO-B Catalog.</p> -->
-              <br>
-              <a href="https://arxiv.org/abs/1907.10843" target="_blank">ArXiv</a>/
-              <a href="https://wvvw.aaai.org/ojs/index.php/AAAI/article/view/4832/4705" target="_blank">AAAI Paper</a>
-            </td>
-          </tr>
+    // ---------- Scroll progress + back-to-top ----------
+    const progress = document.getElementById('progress');
+    const btt = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+      const h = document.documentElement;
+      const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+      progress.style.width = scrolled + '%';
+      btt.classList.toggle('visible', h.scrollTop > 400);
+    }, { passive: true });
+    btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="pub/lf2.jpg" alt="clean-usnob" width="250" height="200" class="img-responsive">
-            </td>
-            <td width="75%" valign="middle">
-              <a>
-                <papertitle>Deep Reinforcement Learning for Playing 2.5D Fighting Games</papertitle>
-              </a>
-              <br>
-              <strong>Yu-Jhe Li*</strong>, Hsin-Yu Chang*, Yu-Jing Lin, Po-Wei Wu, Yu-Chiang Frank Wang (*indicates equal contribution)
-              <br>
-              <em>IEEE International Conference on Image Processing (ICIP)</em>, 2018
-              <!-- <p>We use computer vision techniques to identify and remove diffraction spikes and reflection halos in the USNO-B Catalog.</p> -->
-              <br>
-              <a href="https://arxiv.org/abs/1805.02070" target="_blank">ArXiv</a>/
-              <a href="https://ieeexplore.ieee.org/document/8451491" target="_blank">IEEE Paper</a>/
-              <a href="https://github.com/elvisyjlin/lf2gym" target="_blank">Code</a>
-            </td>
-          </tr>
+    // ---------- Active nav highlighting via IntersectionObserver ----------
+    const navLinks = document.querySelectorAll('#primary-nav a');
+    const sections = ['about','news','research','publications','education','experiences']
+      .map(id => document.getElementById(id))
+      .filter(Boolean);
 
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="pub/reid.png" alt="clean-usnob" width="250" height="200" class="img-responsive">
-            </td>
-            <td width="75%" valign="middle">
-              <a>
-                <papertitle>Adaptation and Re-Identification Network: An Unsupervised Deep Transfer Learning Approach to Person Re-Identification</papertitle>
-              </a>
-              <br>
-              <strong>Yu-Jhe Li</strong>, Fu-En Yang, Yen-Cheng Liu, Yu-Ying Yeh, Xiaofei Du, Yu-Chiang Frank Wang
-              <br>
-              <em>IEEE Conference on Computer Vision and Pattern Recognition (CVPR) Workshops</em>, 2018
-              <!-- <p>We use computer vision techniques to identify and remove diffraction spikes and reflection halos in the USNO-B Catalog.</p> -->
-              <br>
-              <a href="https://arxiv.org/abs/1804.09347" target="_blank">ArXiv</a>/
-              <a href="http://openaccess.thecvf.com/content_cvpr_2018_workshops/w6/html/Li_Adaptation_and_Re-Identification_CVPR_2018_paper.html" target="_blank">Paper</a>/
-              <a href="https://github.com/yujheli/ARN" target="_blank">Code</a>
-            </td>
-          </tr>
+    const setActive = (id) => {
+      navLinks.forEach(a => a.classList.toggle('active', a.dataset.section === id));
+    };
 
-        </tbody></table>
-        
+    const io = new IntersectionObserver((entries) => {
+      // pick the entry highest on screen that is intersecting
+      const visible = entries
+        .filter(e => e.isIntersecting)
+        .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+      if (visible[0]) setActive(visible[0].target.id);
+    }, { rootMargin: '-80px 0px -60% 0px', threshold: 0 });
 
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <!-- <tr>
-            <td>
-              <heading>Professional Activities</heading>
-            </td>
-          </tr>
-        </tbody></table>
-        <table width="100%" align="center" border="0" cellpadding="20"><tbody> -->
-          
+    sections.forEach(s => io.observe(s));
 
-          <!-- <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle"><img src="fig/cvf.jpg"></td>
-            <td width="75%" valign="center">
-              <a>Reviewer or program committee:</a>
-              <br>
-              <br>
-              <a>ICLR 2023, CVPR 2023</a>
-              <br>
-              <a>ICLR 2022, CVPR 2022, ECCV 2022, NeurIPS 2022</a>
-              <br>
-              <a>AAAI 2021, WACV 2021, CVPR 2021, ICCV 2021</a>
-              <br>
-              <a>CVPR 2020, ECCV 2020, ACCV 2020</a>
-            </td>
-          </tr> -->
-        
-        </tbody></table>
+    // ---------- Publication filters ----------
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const pubs = document.querySelectorAll('#pubList .pub');
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const f = btn.dataset.filter;
+        pubs.forEach(p => {
+          const show = (f === 'all') || (p.dataset.year === f);
+          p.classList.toggle('hidden', !show);
+        });
+      });
+    });
 
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <tr>
-            <td>
-              <heading>Education Experiences</heading>
-            </td>
-          </tr>
-        </tbody></table>
-        <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle" align="center"><img src="fig/cmu.png" width="120"  class="img-responsive"></td>
-            <td width="75%" valign="center">
-              <a>Ph.D., Electrical and Computer Engineering</a>
-              <br>
-              Carnegie Mellon University
-              <br>
-              <em>Pittsburgh, PA</em>
-              <br>
-              Sep. 2020 - Aug. 2023
-              <br>
-              Sep. 2019 - Aug. 2020 (Research Associate @ Robotics Institute)
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle" align="center"><img src="fig/ntu.png" width="120"  class="img-responsive"></td>
-            <td width="75%" valign="center">
-              <a>M.S., Communication Engineering (data science track)</a>
-              <br>
-              National Taiwan University
-              <br>
-              <em>Taipei, Taiwan</em>
-              <br>
-              Sep. 2017 - Jan. 2019
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle" align="center"><img src="fig/nthu.png" width="120"  class="img-responsive"></td>
-            <td width="75%" valign="center">
-              <a>B.S., Electrical Engineering and Computer Science</a>
-              <br>
-              National Tsing Hua University
-              <br>
-              <em>Taipei, Taiwan</em>
-              <br>
-              Sep. 2013 - Jan. 2017
-              
-            </td>
-          </tr>
-        </tbody></table>
-
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
-          <tr>
-            <td>
-              <heading>College Misc Experiences</heading>
-            </td>
-          </tr>
-        </tbody></table>
-        <table width="100%" align="center" border="0" cellpadding="20"><tbody>
-          
-          
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle" align="center"><img src="fig/umn.png" height="80"  class="img-responsive"></td>
-            <td width="75%" valign="center">
-              <a>Exchange Student</a>
-              <br>
-              University of Minnesota - Twin Cities
-              <br>
-              <em>Minneapolis, MN, USA</em>
-              <br>
-              Aug. 2016 - Dec. 2016 
-              <br>Fall semester
-              
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle" align="center"><img src="fig/fudan.png" height="120"  class="img-responsive"></td>
-            <td width="75%" valign="center">
-              <a>Exchange Student</a>
-              <br>
-              Fudan University
-              <br>
-              <em>Shanghai, China</em>
-              <br>
-              July. 2015 - Aug. 2015
-              <br>Summer
-              
-            </td>
-          </tr>
-          <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle" align="center"><img src="fig/tsinghua.png" height="120"  class="img-responsive"></td>
-            <td width="75%" valign="center">
-              <a>Exchange Student</a>
-              <br>
-              Tsinghua University
-              <br>
-              <em>Beijing, China</em>
-              <br>
-              July. 2014 - Aug. 2014
-              <br>Summer
-              
-            </td>
-          </tr>
-        
-        </tbody></table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr>
-            <td style="padding:0px">
-              <br>
-              <!-- <p style="text-align:left;font-size:small;">
-                The source code of my website is borrowed from <a href="https://github.com/jonbarron/jonbarron_website">here</a>.
-              </p>
-              <br> -->
-<!--               <p style="text-align:center">
-                <a href='https://clustrmaps.com/site/1awyt'  title='Visit tracker'><img src='//clustrmaps.com/map_v2.png?cl=ffffff&w=350&t=tt&d=6idYzhcISb1eSHmKgEO3XZIWWwba7x83F7OK8lw9Tnw&co=2d78ad&ct=ffffff'/></a>
-              </p> -->
-              <!-- <p style="text-align:center">
-                <a href='https://clustrmaps.com/site/1bhkk'  title='Visit tracker'><img src='//clustrmaps.com/map_v2.png?cl=080808&w=350&t=n&d=qiX3sw9N3ZHimF8pZhHYll-PU7RyDr5crgRycvT2jcY&co=ffffff&ct=808080'/></a>
-              </p> -->
-              <a href='https://clustrmaps.com/site/1awyt'  title='Visit tracker'><img src='//clustrmaps.com/map_v2.png?cl=ffffff&w=800&t=tt&d=6idYzhcISb1eSHmKgEO3XZIWWwba7x83F7OK8lw9Tnw&co=2d78ad&ct=ffffff'/></a>            </td>
-          </tr>
-        </tbody></table>
-      </td>
-    </tr>
-  </table>
+    // ---------- Year stamp ----------
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
-
 </html>
