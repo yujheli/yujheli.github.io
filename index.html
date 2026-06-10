@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="stylesheet.css?v=20260610d">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css?v=20260610e">
 </head>
 
 <body>
@@ -753,7 +753,21 @@
         return;
       }
       const world = worldRes.value;
-      let data = (countsRes.status === 'fulfilled' && countsRes.value && countsRes.value.record) || { counts: {}, total: 0 };
+
+      // Strict read of existing counts. If we don't get a valid record back,
+      // we MUST NOT write — otherwise we'd overwrite real data with zeros.
+      let data = null;
+      let canWrite = false;
+      if (countsRes.status === 'fulfilled' && countsRes.value && countsRes.value.record
+          && countsRes.value.record.counts && typeof countsRes.value.record.total === 'number') {
+        data = countsRes.value.record;
+        canWrite = true;   // We have authoritative data, safe to write back
+      } else {
+        // Read failed or returned unexpected shape — render with empty map, never write
+        console.warn('[visitor-map] Could not read counts; running in read-only mode', countsRes);
+        data = { counts: {}, total: 0 };
+        canWrite = false;
+      }
       if (!data.counts) data.counts = {};
       if (typeof data.total !== 'number') data.total = 0;
 
@@ -871,7 +885,9 @@
         }
 
         // Once-per-session counting (with per-region breakdown)
-        if (!sessionStorage.getItem('vm_counted')) {
+        // Only attempt to write if we successfully READ the bin first — otherwise
+        // we could overwrite the stored counts with zeros.
+        if (canWrite && !sessionStorage.getItem('vm_counted')) {
           sessionStorage.setItem('vm_counted', '1');
           // Migrate-or-init entry to new schema as we touch it
           let entry = data.counts[cc];
