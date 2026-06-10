@@ -495,13 +495,13 @@ img { max-width: 100%; display: block; }
   font-size: 13.5px;
 }
 .footer img { margin: 16px auto 0; max-width: 100%; }
-.visitor-counter {
+.visitor-globe {
   display: flex;
   justify-content: center;
-  margin-top: 14px;
+  margin-top: 18px;
 }
-.visitor-counter img { height: 22px; width: auto; opacity: 0.85; transition: opacity 0.2s ease; margin-top: 0; }
-.visitor-counter img:hover { opacity: 1; }
+.visitor-globe > * { max-width: 100%; }
+.visitor-globe canvas, .visitor-globe img, .visitor-globe iframe { max-width: 100%; height: auto; }
 
 /* ---------- Back-to-top ---------- */
 .back-to-top {

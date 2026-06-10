@@ -546,10 +546,10 @@
     <!-- ===== Footer ===== -->
     <footer class="footer">
       <div>© <span id="year"></span> Yu-Jhe Li · Built with care.</div>
-      <div class="visitor-counter" id="visitorCounter">
-        <img src="https://visitor-badge.laobi.icu/badge?page_id=yujheli.github.io&left_color=gray&right_color=%231772d0&left_text=Visitors"
-             alt="Visitor count"
-             onerror="document.getElementById('visitorCounter').style.display='none'">
+      <div class="visitor-globe" id="visitorGlobe">
+        <!-- MapMyVisitors globe widget -->
+        <script type="text/javascript" id="mmvst_globe"
+                src="https://mapmyvisitors.com/globe.js?d=jvX_JX50oBDl-F2_6_GxY-GwluzFIEjJc5x25jlZAVc"></script>
       </div>
     </footer>
 
@@ -684,6 +684,14 @@
         if (e.key === 'Escape' && lb.classList.contains('open')) close();
       });
     })();
+
+    // ---------- Visitor globe watchdog (hide container if widget fails) ----------
+    setTimeout(() => {
+      const g = document.getElementById('visitorGlobe');
+      if (!g) return;
+      const hasContent = g.querySelector('img, iframe, canvas, svg, div');
+      if (!hasContent) g.style.display = 'none';
+    }, 6000);
 
     // ---------- Year stamp ----------
     document.getElementById('year').textContent = new Date().getFullYear();
