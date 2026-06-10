@@ -286,6 +286,38 @@ img { max-width: 100%; display: block; }
 }
 .news-list .desc { color: var(--fg); font-size: 15px; }
 
+/* Collapsible older-news disclosure */
+.news-older {
+  margin-top: 12px;
+  border-top: 1px dashed var(--border);
+  padding-top: 10px;
+}
+.news-older > summary {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-soft);
+  list-style: none;
+  user-select: none;
+  transition: background var(--transition);
+}
+.news-older > summary::-webkit-details-marker { display: none; }
+.news-older > summary::before {
+  content: "▸";
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+.news-older[open] > summary::before { transform: rotate(90deg); }
+.news-older[open] > summary { background: var(--accent); color: #fff; }
+.news-older > summary:hover { filter: brightness(1.05); }
+.news-older > .news-list { margin-top: 10px; }
+
 /* ---------- Research bullets ---------- */
 .research-list {
   list-style: none;
