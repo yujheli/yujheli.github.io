@@ -488,54 +488,82 @@ img { max-width: 100%; display: block; }
 /* ---------- Visitor Map ---------- */
 .visitor-map-section {
   margin: 60px 0 20px;
-  padding: 24px;
+  padding: 28px;
   border: 1px solid var(--border);
   border-radius: var(--radius);
   background: var(--bg-elev);
+  box-shadow: var(--shadow-sm);
 }
-.vm-header { text-align: center; margin-bottom: 16px; }
+.vm-header { text-align: center; margin-bottom: 18px; }
 .vm-header h3 {
-  margin: 0 0 10px;
-  font-size: 18px;
+  margin: 0 0 12px;
+  font-size: 22px;
   font-weight: 700;
+  letter-spacing: -0.2px;
   color: var(--fg);
 }
 .vm-stats {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px 18px;
-  font-size: 14px;
+  gap: 10px 22px;
+  font-size: 14.5px;
   color: var(--fg-muted);
 }
-.vm-stat strong { color: var(--accent); font-weight: 700; }
+.vm-stat strong { color: var(--accent); font-weight: 800; font-size: 16px; }
 #vmYou { color: var(--accent); font-weight: 600; }
 
 .vm-map-wrap {
   position: relative;
   width: 100%;
-  background: var(--bg-soft);
-  border-radius: var(--radius-sm);
+  /* Ocean color — light blue in light mode, deep blue in dark */
+  background: linear-gradient(180deg, #dff1ff 0%, #c2e3f7 100%);
+  border-radius: var(--radius);
   overflow: hidden;
-  padding: 8px;
+  padding: 0;
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.08);
+}
+[data-theme="dark"] .vm-map-wrap {
+  background: linear-gradient(180deg, #0b2138 0%, #0a1a2e 100%);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
 }
 #vmMap { width: 100%; height: auto; display: block; }
+
+/* Default (no visits) country: visible muted-green continent on blue ocean */
 #vmMap .vm-country {
-  fill: var(--bg-elev);
-  stroke: var(--border);
+  fill: #c8e6c9;
+  stroke: #ffffff;
+  stroke-width: 0.6;
+  stroke-linejoin: round;
+  transition: fill 0.25s ease, stroke 0.2s ease, filter 0.2s ease;
+}
+[data-theme="dark"] #vmMap .vm-country {
+  fill: #2c4a3e;
+  stroke: #0a1a2e;
   stroke-width: 0.5;
-  transition: fill 0.3s ease, transform 0.2s ease;
-  transform-origin: center;
-  transform-box: fill-box;
 }
-[data-theme="dark"] #vmMap .vm-country { fill: #2a313c; stroke: #3a4150; }
-#vmMap .vm-country:hover { stroke: var(--accent); stroke-width: 1.2; }
-#vmMap .vm-pulse { fill: var(--accent); animation: vmPulse 1.8s ease-out infinite; transform-origin: center; transform-box: fill-box; }
+#vmMap .vm-country:hover {
+  stroke: var(--accent);
+  stroke-width: 1.6;
+  filter: brightness(1.15);
+  cursor: pointer;
+}
+
+/* Visitor pulse dot */
+#vmMap .vm-pulse {
+  fill: #ff4d4d;
+  animation: vmPulse 1.8s ease-out infinite;
+}
 @keyframes vmPulse {
-  0%   { opacity: 0.9; r: 4; }
-  100% { opacity: 0;   r: 16; }
+  0%   { opacity: 0.85; r: 5; }
+  100% { opacity: 0;    r: 22; }
 }
-#vmMap .vm-pulse-dot { fill: var(--accent); }
+#vmMap .vm-pulse-dot {
+  fill: #ff4d4d;
+  stroke: #ffffff;
+  stroke-width: 1.5;
+  filter: drop-shadow(0 0 4px rgba(255, 77, 77, 0.7));
+}
 
 .vm-tooltip {
   position: absolute;
@@ -564,10 +592,10 @@ img { max-width: 100%; display: block; }
 }
 .vm-legend-bar {
   display: inline-block;
-  width: 140px;
-  height: 8px;
-  border-radius: 4px;
-  background: linear-gradient(to right, var(--accent-soft), var(--accent));
+  width: 160px;
+  height: 10px;
+  border-radius: 6px;
+  background: linear-gradient(to right, #ffffcc, #fed976, #feb24c, #fc4e2a, #b10026);
 }
 
 /* ---------- Footer ---------- */

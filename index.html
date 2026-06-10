@@ -754,9 +754,10 @@
       const pathGen = d3.geoPath().projection(projection);
 
       const maxCount = Math.max(1, ...Object.values(data.counts));
+      // Warm gradient (yellow → orange → red) for high-contrast visibility
       const colorScale = d3.scaleSequential()
-        .domain([0, maxCount])
-        .interpolator(d3.interpolateRgb(getCssVar('--accent-soft'), getCssVar('--accent')));
+        .domain([0, Math.max(1, maxCount)])
+        .interpolator(d3.interpolateYlOrRd);
 
       const ns = 'http://www.w3.org/2000/svg';
       const fragment = document.createDocumentFragment();
