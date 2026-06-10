@@ -685,14 +685,6 @@
       });
     })();
 
-    // ---------- Visitor globe watchdog (hide container if widget fails) ----------
-    setTimeout(() => {
-      const g = document.getElementById('visitorGlobe');
-      if (!g) return;
-      const hasContent = g.querySelector('img, iframe, canvas, svg, div');
-      if (!hasContent) g.style.display = 'none';
-    }, 6000);
-
     // ---------- Year stamp ----------
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>

@@ -499,9 +499,12 @@ img { max-width: 100%; display: block; }
   display: flex;
   justify-content: center;
   margin-top: 18px;
+  min-height: 200px;
 }
 .visitor-globe > * { max-width: 100%; }
-.visitor-globe canvas, .visitor-globe img, .visitor-globe iframe { max-width: 100%; height: auto; }
+.visitor-globe canvas,
+.visitor-globe img,
+.visitor-globe iframe { max-width: 100%; }
 
 /* ---------- Back-to-top ---------- */
 .back-to-top {
