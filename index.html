@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="stylesheet.css?v=20260610c">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css?v=20260610d">
 </head>
 
 <body>
@@ -762,9 +762,18 @@
       const projection = d3.geoNaturalEarth1().fitSize([960, 500], { type: 'FeatureCollection', features: countries });
       const pathGen = d3.geoPath().projection(projection);
 
-      const maxCount = Math.max(1, ...Object.values(data.counts));
+      // Schema migration: support both old {US: 5} and new {US: {_total: 5, regions: {CA: 3}}}.
+      const getCount = (entry) => {
+        if (entry == null) return 0;
+        return typeof entry === 'number' ? entry : (entry._total || 0);
+      };
+      const getRegions = (entry) => {
+        return (entry && typeof entry === 'object' && entry.regions) || {};
+      };
+
+      const allCounts = Object.values(data.counts).map(getCount);
+      const maxCount = Math.max(1, ...allCounts);
       // Blue accent gradient — use solid hex colors so d3.interpolateRgb parses correctly.
-      // (Passing rgba() with alpha causes interpolation to produce near-black fills.)
       const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
       const colorStart = isDark ? '#1a3a5c' : '#cfe3f7';
       const colorEnd   = isDark ? '#58a6ff' : '#1772d0';
@@ -780,14 +789,14 @@
       countries.forEach(f => {
         const numId = String(f.id).padStart(3, '0');
         const a2 = NUM_TO_ALPHA2[numId];
-        const cnt = (a2 && data.counts[a2]) || 0;
+        const cnt = a2 ? getCount(data.counts[a2]) : 0;
         const p = document.createElementNS(ns, 'path');
         p.setAttribute('d', pathGen(f));
         p.setAttribute('class', 'vm-country');
         p.setAttribute('data-name', f.properties && f.properties.name || a2 || '');
         p.setAttribute('data-iso', a2 || '');
         if (cnt > 0) p.setAttribute('style', `fill: ${colorScale(cnt)}`);
-        p.addEventListener('mouseenter', e => showTooltip(e, p, cnt));
+        p.addEventListener('mouseenter', e => showTooltip(e, p));
         p.addEventListener('mousemove', e => moveTooltip(e));
         p.addEventListener('mouseleave', hideTooltip);
         fragment.appendChild(p);
@@ -811,10 +820,13 @@
 
       if (visitor && visitor.country_code) {
         const cc = visitor.country_code.toUpperCase();
-        const place = [visitor.city, visitor.country_name].filter(Boolean).join(', ');
-        youEl.textContent = `📍 You're visiting from ${place || cc}`;
+        const region = visitor.region || '';   // e.g. "California"
+        const city   = visitor.city   || '';
+        const country = visitor.country_name || cc;
+        const place = [city, region, country].filter(Boolean).join(', ');
+        youEl.textContent = `📍 You're visiting from ${place}`;
 
-        // Pulse dot on visitor's location
+        // Pulse dot + label on visitor's exact location
         if (typeof visitor.latitude === 'number' && typeof visitor.longitude === 'number') {
           const [x, y] = projection([visitor.longitude, visitor.latitude]) || [];
           if (Number.isFinite(x) && Number.isFinite(y)) {
@@ -826,13 +838,50 @@
             dot.setAttribute('cx', x); dot.setAttribute('cy', y);
             dot.setAttribute('r', 3.5); dot.setAttribute('class', 'vm-pulse-dot');
             svg.appendChild(dot);
+
+            // City label next to pulse dot
+            const labelText = [city, region].filter(Boolean).join(', ') || country;
+            if (labelText) {
+              // Place label to the right of the dot, unless we're too close to the right edge
+              const toRight = x < 880;
+              const labelX = x + (toRight ? 10 : -10);
+              const labelBg = document.createElementNS(ns, 'rect');
+              const label = document.createElementNS(ns, 'text');
+              label.setAttribute('x', labelX);
+              label.setAttribute('y', y + 1);
+              label.setAttribute('class', 'vm-label');
+              label.setAttribute('text-anchor', toRight ? 'start' : 'end');
+              label.setAttribute('dominant-baseline', 'middle');
+              label.textContent = labelText;
+              // Background plate (added first so text renders on top)
+              labelBg.setAttribute('class', 'vm-label-bg');
+              labelBg.setAttribute('rx', 3); labelBg.setAttribute('ry', 3);
+              svg.appendChild(labelBg);
+              svg.appendChild(label);
+              // Size the bg to match text after layout
+              requestAnimationFrame(() => {
+                const bb = label.getBBox();
+                labelBg.setAttribute('x', bb.x - 4);
+                labelBg.setAttribute('y', bb.y - 2);
+                labelBg.setAttribute('width', bb.width + 8);
+                labelBg.setAttribute('height', bb.height + 4);
+              });
+            }
           }
         }
 
-        // Once-per-session counting
+        // Once-per-session counting (with per-region breakdown)
         if (!sessionStorage.getItem('vm_counted')) {
           sessionStorage.setItem('vm_counted', '1');
-          data.counts[cc] = (data.counts[cc] || 0) + 1;
+          // Migrate-or-init entry to new schema as we touch it
+          let entry = data.counts[cc];
+          if (entry == null || typeof entry === 'number') {
+            entry = { _total: (typeof entry === 'number' ? entry : 0), regions: {} };
+          }
+          if (!entry.regions) entry.regions = {};
+          entry._total = (entry._total || 0) + 1;
+          if (region) entry.regions[region] = (entry.regions[region] || 0) + 1;
+          data.counts[cc] = entry;
           data.total = (data.total || 0) + 1;
           try {
             await fetch(WRITE_URL, {
@@ -841,10 +890,11 @@
               body: JSON.stringify(data),
             });
             // Re-color all visited countries with the updated scale
-            const newMax = Math.max(2, ...Object.values(data.counts));
+            const newCounts = Object.values(data.counts).map(getCount);
+            const newMax = Math.max(2, ...newCounts);
             colorScale.domain([1, newMax]);
             Object.entries(data.counts).forEach(([k, v]) => {
-              if (countryNodes[k]) countryNodes[k].setAttribute('style', `fill: ${colorScale(v)}`);
+              if (countryNodes[k]) countryNodes[k].setAttribute('style', `fill: ${colorScale(getCount(v))}`);
             });
             renderStats();
           } catch (e) { /* ignore write failures */ }
@@ -853,13 +903,30 @@
         youEl.textContent = '🌐 Welcome!';
       }
 
-      // Tooltip handlers
-      function showTooltip(e, node, cnt) {
+      // Tooltip handlers — show per-region breakdown for countries with multiple regions
+      function showTooltip(e, node) {
         const name = node.getAttribute('data-name') || '';
         const iso = node.getAttribute('data-iso');
-        // Get latest count from data (in case it was just incremented)
-        const liveCount = (iso && data.counts[iso]) || cnt;
-        tooltip.innerHTML = `<strong>${name}</strong>${liveCount ? ` · ${liveCount} visit${liveCount === 1 ? '' : 's'}` : ''}`;
+        const entry = iso ? data.counts[iso] : null;
+        const total = getCount(entry);
+        const regions = getRegions(entry);
+
+        let html = `<strong>${name}</strong>`;
+        if (total) {
+          html += ` · ${total} visit${total === 1 ? '' : 's'}`;
+        }
+        // Top 5 regions
+        const topRegions = Object.entries(regions)
+          .sort((a, b) => b[1] - a[1])
+          .slice(0, 5);
+        if (topRegions.length) {
+          html += `<div class="vm-tooltip-regions">`;
+          topRegions.forEach(([rname, cnt]) => {
+            html += `<div class="vm-tt-row"><span>${rname}</span><span>${cnt}</span></div>`;
+          });
+          html += `</div>`;
+        }
+        tooltip.innerHTML = html;
         tooltip.classList.add('show');
         moveTooltip(e);
       }
