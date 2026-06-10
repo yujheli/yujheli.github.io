@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="stylesheet.css?v=20260609">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css?v=20260610b">
 </head>
 
 <body>
@@ -755,10 +755,15 @@
       const pathGen = d3.geoPath().projection(projection);
 
       const maxCount = Math.max(1, ...Object.values(data.counts));
-      // Blue accent gradient (light → accent blue)
+      // Blue accent gradient — use solid hex colors so d3.interpolateRgb parses correctly.
+      // (Passing rgba() with alpha causes interpolation to produce near-black fills.)
+      const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      const colorStart = isDark ? '#1a3a5c' : '#cfe3f7';
+      const colorEnd   = isDark ? '#58a6ff' : '#1772d0';
       const colorScale = d3.scaleSequential()
-        .domain([0, Math.max(1, maxCount)])
-        .interpolator(d3.interpolateRgb(getCssVar('--accent-soft'), getCssVar('--accent')));
+        .domain([1, Math.max(2, maxCount)])
+        .interpolator(d3.interpolateRgb(colorStart, colorEnd))
+        .clamp(true);
 
       const ns = 'http://www.w3.org/2000/svg';
       const fragment = document.createDocumentFragment();
@@ -827,16 +832,12 @@
               headers: { 'Content-Type': 'application/json', 'X-Master-Key': JSONBIN_KEY },
               body: JSON.stringify(data),
             });
-            // Re-color the visitor's country with new count
-            const node = countryNodes[cc];
-            if (node) {
-              const newMax = Math.max(1, ...Object.values(data.counts));
-              colorScale.domain([0, newMax]);
-              // Recolor all countries with new scale
-              Object.entries(data.counts).forEach(([k, v]) => {
-                if (countryNodes[k]) countryNodes[k].setAttribute('style', `fill: ${colorScale(v)}`);
-              });
-            }
+            // Re-color all visited countries with the updated scale
+            const newMax = Math.max(2, ...Object.values(data.counts));
+            colorScale.domain([1, newMax]);
+            Object.entries(data.counts).forEach(([k, v]) => {
+              if (countryNodes[k]) countryNodes[k].setAttribute('style', `fill: ${colorScale(v)}`);
+            });
             renderStats();
           } catch (e) { /* ignore write failures */ }
         }
@@ -860,10 +861,6 @@
         tooltip.style.top = (e.clientY - wrap.top) + 'px';
       }
       function hideTooltip() { tooltip.classList.remove('show'); }
-
-      function getCssVar(name) {
-        return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || '#1772d0';
-      }
     }
   </script>
 </body>
