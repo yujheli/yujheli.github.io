@@ -496,15 +496,11 @@ img { max-width: 100%; display: block; }
 }
 .footer img { margin: 16px auto 0; max-width: 100%; }
 .visitor-globe {
-  display: flex;
-  justify-content: center;
+  text-align: center;
   margin-top: 18px;
-  min-height: 200px;
+  min-height: 240px;
 }
-.visitor-globe > * { max-width: 100%; }
-.visitor-globe canvas,
-.visitor-globe img,
-.visitor-globe iframe { max-width: 100%; }
+.visitor-globe .mmvst_outer { margin: 0 auto; }
 
 /* ---------- Back-to-top ---------- */
 .back-to-top {
