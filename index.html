@@ -546,11 +546,10 @@
     <!-- ===== Footer ===== -->
     <footer class="footer">
       <div>© <span id="year"></span> Yu-Jhe Li · Built with care.</div>
-      <div class="visitor-map" id="visitorMap">
-        <!-- ClustrMaps official JS widget -->
-        <script type="text/javascript" id="clustrmaps"
-                src="https://clustrmaps.com/map_v2.js?d=6idYzhcISb1eSHmKgEO3XZIWWwba7x83F7OK8lw9Tnw&cl=ffffff&w=a"
-                onerror="document.getElementById('visitorMap').style.display='none'"></script>
+      <div class="visitor-counter" id="visitorCounter">
+        <img src="https://visitor-badge.laobi.icu/badge?page_id=yujheli.github.io&left_color=gray&right_color=%231772d0&left_text=Visitors"
+             alt="Visitor count"
+             onerror="document.getElementById('visitorCounter').style.display='none'">
       </div>
     </footer>
 
@@ -685,16 +684,6 @@
         if (e.key === 'Escape' && lb.classList.contains('open')) close();
       });
     })();
-
-    // ---------- Visitor map watchdog ----------
-    // If ClustrMaps doesn't render anything within 6s, hide the container
-    setTimeout(() => {
-      const vm = document.getElementById('visitorMap');
-      if (!vm) return;
-      // Widget renders an <img> or <iframe> on success; otherwise only the script tag remains
-      const hasContent = vm.querySelector('img, iframe, canvas, svg');
-      if (!hasContent) vm.style.display = 'none';
-    }, 6000);
 
     // ---------- Year stamp ----------
     document.getElementById('year').textContent = new Date().getFullYear();
