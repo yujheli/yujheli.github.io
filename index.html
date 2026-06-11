@@ -827,9 +827,32 @@
       // country so tiny ones (Singapore, Monaco, etc.) are unmistakable on the map.
       const markerLayer = document.createElementNS(ns, 'g');
       markerLayer.setAttribute('class', 'vm-markers');
-      visitedFeatures.forEach(({ feature, cnt }) => {
-        const [cx, cy] = pathGen.centroid(feature);
-        if (!Number.isFinite(cx) || !Number.isFinite(cy)) return;
+
+      // Fallback centroids for ISO alpha-2 codes that may not be in the atlas
+      // OR whose computed centroid is invalid. [lon, lat]
+      const FALLBACK_CENTROIDS = {
+        SG: [103.8198, 1.3521],   MC: [7.4246, 43.7384],
+        AD: [1.6016, 42.5063],    LI: [9.5554, 47.1660],
+        MT: [14.3754, 35.9375],   VA: [12.4534, 41.9029],
+        SM: [12.4578, 43.9424],   BH: [50.5577, 26.0667],
+        HK: [114.1694, 22.3193],  MO: [113.5439, 22.1987],
+        BN: [114.7277, 4.5353],
+      };
+
+      visitedFeatures.forEach(({ feature, a2, cnt }) => {
+        let cx, cy;
+        try { [cx, cy] = pathGen.centroid(feature); } catch (_) {}
+        if (!Number.isFinite(cx) || !Number.isFinite(cy)) {
+          const fb = FALLBACK_CENTROIDS[a2];
+          if (fb) {
+            const proj = projection(fb);
+            if (proj) [cx, cy] = proj;
+          }
+        }
+        if (!Number.isFinite(cx) || !Number.isFinite(cy)) {
+          console.warn('[visitor-map] no centroid for', a2, feature);
+          return;
+        }
         const dot = document.createElementNS(ns, 'circle');
         dot.setAttribute('cx', cx);
         dot.setAttribute('cy', cy);
@@ -837,8 +860,29 @@
         const radius = Math.min(8, 4 + Math.log2(cnt + 1));
         dot.setAttribute('r', radius);
         dot.setAttribute('class', 'vm-country-dot');
+        dot.setAttribute('data-iso', a2 || '');
         markerLayer.appendChild(dot);
       });
+
+      // Also: for any visited country that isn't in the atlas at all (no path),
+      // still drop a marker via fallback centroid.
+      Object.entries(data.counts).forEach(([cc, entry]) => {
+        if (countryNodes[cc]) return;       // already drawn
+        const cnt = getCount(entry);
+        if (cnt <= 0) return;
+        const fb = FALLBACK_CENTROIDS[cc];
+        if (!fb) return;
+        const proj = projection(fb);
+        if (!proj) return;
+        const [cx, cy] = proj;
+        const dot = document.createElementNS(ns, 'circle');
+        dot.setAttribute('cx', cx); dot.setAttribute('cy', cy);
+        dot.setAttribute('r', Math.min(8, 4 + Math.log2(cnt + 1)));
+        dot.setAttribute('class', 'vm-country-dot');
+        dot.setAttribute('data-iso', cc);
+        markerLayer.appendChild(dot);
+      });
+
       svg.appendChild(markerLayer);
 
       // Update stats display
