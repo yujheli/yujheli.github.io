@@ -724,7 +724,9 @@
       const JSONBIN_KEY = '$2a$10$qyB.2I9PuK6pEUw6q6Rp7.YTP0TzTMDMyb/wMM7H3xvnxkAZwI55S';
       const READ_URL  = `https://api.jsonbin.io/v3/b/${JSONBIN_ID}/latest`;
       const WRITE_URL = `https://api.jsonbin.io/v3/b/${JSONBIN_ID}`;
-      const MAP_URL   = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json';
+      // Use 50m atlas (241 countries vs 110m's 177) so small countries like
+      // Singapore, Taiwan, Macau, Hong Kong, Monaco, etc. render properly.
+      const MAP_URL   = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-50m.json';
 
       const svg = document.getElementById('vmMap');
       const tooltip = document.getElementById('vmTooltip');
