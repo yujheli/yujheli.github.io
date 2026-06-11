@@ -592,6 +592,17 @@ img { max-width: 100%; display: block; }
 }
 [data-theme="dark"] #vmMap .vm-pulse-dot { stroke: var(--bg); }
 
+/* Visited-country marker dots — ensures tiny countries (Singapore, Monaco, etc.) are visible */
+#vmMap .vm-country-dot {
+  fill: var(--accent);
+  fill-opacity: 0.75;
+  stroke: #ffffff;
+  stroke-width: 1.2;
+  pointer-events: none;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
+}
+[data-theme="dark"] #vmMap .vm-country-dot { stroke: var(--bg-elev); }
+
 /* Visitor city label */
 #vmMap .vm-label {
   font-size: 10px;

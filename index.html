@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="stylesheet.css?v=20260610e">
+  <link rel="stylesheet" type="text/css" href="stylesheet.css?v=20260611a">
 </head>
 
 <body>
@@ -801,6 +801,7 @@
       const fragment = document.createDocumentFragment();
       const countryNodes = {};
 
+      const visitedFeatures = [];
       countries.forEach(f => {
         const numId = String(f.id).padStart(3, '0');
         const a2 = NUM_TO_ALPHA2[numId];
@@ -810,7 +811,10 @@
         p.setAttribute('class', 'vm-country');
         p.setAttribute('data-name', f.properties && f.properties.name || a2 || '');
         p.setAttribute('data-iso', a2 || '');
-        if (cnt > 0) p.setAttribute('style', `fill: ${colorScale(cnt)}`);
+        if (cnt > 0) {
+          p.setAttribute('style', `fill: ${colorScale(cnt)}`);
+          visitedFeatures.push({ feature: f, a2, cnt });
+        }
         p.addEventListener('mouseenter', e => showTooltip(e, p));
         p.addEventListener('mousemove', e => moveTooltip(e));
         p.addEventListener('mouseleave', hideTooltip);
@@ -818,6 +822,24 @@
         if (a2) countryNodes[a2] = p;
       });
       svg.appendChild(fragment);
+
+      // Visibility markers — draw a small dot on the centroid of every visited
+      // country so tiny ones (Singapore, Monaco, etc.) are unmistakable on the map.
+      const markerLayer = document.createElementNS(ns, 'g');
+      markerLayer.setAttribute('class', 'vm-markers');
+      visitedFeatures.forEach(({ feature, cnt }) => {
+        const [cx, cy] = pathGen.centroid(feature);
+        if (!Number.isFinite(cx) || !Number.isFinite(cy)) return;
+        const dot = document.createElementNS(ns, 'circle');
+        dot.setAttribute('cx', cx);
+        dot.setAttribute('cy', cy);
+        // Size scales gently with visit count (4..8px radius)
+        const radius = Math.min(8, 4 + Math.log2(cnt + 1));
+        dot.setAttribute('r', radius);
+        dot.setAttribute('class', 'vm-country-dot');
+        markerLayer.appendChild(dot);
+      });
+      svg.appendChild(markerLayer);
 
       // Update stats display
       const renderStats = () => {
